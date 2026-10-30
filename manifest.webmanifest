@@ -1,0 +1,17 @@
+{
+  "name": "Fixral 3D Splitter / Slicer",
+  "short_name": "Fixral 3D",
+  "description": "Split oversized 3D models to fit your printer and join them with pins, dowels, magnets or dovetails.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#07090d",
+  "theme_color": "#07090d",
+  "categories": ["design", "productivity", "utilities"],
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
