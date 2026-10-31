@@ -36,10 +36,22 @@
 | **1 · Hazırla** | STL'i sürükle. Otomatik mesh onarımı, sadeleştirme, ölçekleme (`850mm`, `120%`, `1.5`), döndürme, içini boşaltma. |
 | **2 · Ön bölme** | Yazıcını seç (Bambu Lab, Prusa, Creality, Elegoo ya da özel ölçü). Kesim düzlemleri otomatik yerleşir; sürükle ya da eğri kesim çiz. |
 | **3 · Böl** | Parçalar ve bağlantılar arka planda saniyeler içinde üretilir. |
-| **4 · Patlat** | Parçaları incele, birleştir, sil; pim, dübel ya da delik ekle. ZIP veya 3MF olarak indir. |
-| **5 · Baskı** | Parçalar en uygun yüzleriyle tablalara yerleşir; çubuklu skirt ve mouse ear eklenir; tabla başına tek STL. |
+| **4 · Parçala** | Parçaları ayrık görünümde incele, birleştir, sil; kesim yüzüne pim ya da dübel ekle. ZIP veya 3MF olarak indir. |
+| **5 · Baskı** | Parçalar en uygun yüzleriyle tablalara yerleşir; çubuklu skirt ve mouse ear eklenir; tabla başına tek STL ya da 3MF. |
 
-<img src="screenshots/explode.jpg" alt="Patlatılmış görünümde pim ve dübellerle bölünmüş model" width="100%" />
+<img src="screenshots/explode.jpg" alt="Ayrık görünümde pim ve dübellerle bölünmüş, seçili parçası konturlu model" width="100%" />
+
+## v0.5.0'da yeni
+
+- **Stüdyo görünüm:** sinematik ton eşleme, sıcak ana ışık ile soğuk dolgu ve kenar ışığı, zemine ve parçaların birbirine düşen yumuşak gölgeler. Eğri yüzeyler pürüzsüz, keskin kenarlar net; seçili parçanın çevresinde kontur.
+- **Görünüm menüsü (`V`):** paneli, adım açıklamalarını, Dot'u, ızgarayı, ölçüleri ve yazıcı hacmini göster ya da gizle; ışık, parlaklık, ışık yönü, gölge, arka plan, panel genişliği ve çözünürlüğü kendine göre ayarla.
+- **Daha geniş çalışma alanı:** `P` ile paneli gizle ya da kenarından sürükleyerek genişlet; her adımın ana düğmesi panelin altında sabit.
+- **Sahnede ölçüler** ve yeni kısayollar: `1`–`4` görünümler, `F` sığdır, `G` ızgara, `X` kesit, `W` tel kafes, `R` döndür, `Enter` böl.
+- **Hakkında ve Neler yeni:** sürüm rozetine tıkla; sürüm notları uygulamanın içinde.
+
+<img src="screenshots/view-menu.jpg" alt="Görünüm menüsü: göster/gizle, ışık, gölge ve çalışma alanı ayarları" width="100%" />
+
+<img src="screenshots/prepare.jpg" alt="Hazırla adımı: stüdyo ışığında model, kesim düzlemleri ve eksen renkli ölçü etiketleri" width="100%" />
 
 ## Öne çıkan özellikler
 
@@ -49,7 +61,7 @@ ABS, ASA, naylon ve PC gibi çeken filamentlerde taban ve köşe kalkmasına kar
 <img src="screenshots/skirt.jpg" alt="Tablalara yerleşmiş parçalar ve çubuklu skirt" width="100%" />
 
 ### Kesitin şeklini izleyen bağlantılar
-Pim, dübel, mıknatıs ve kırlangıç kuyruğu noktaları kesit boyunca, kalın bölgelere yakın ve aralıklı dağılır. Kesim yüzüne tıklayarak elle bağlantı ekle, herhangi bir yüzeye tıklayarak delik aç.
+Pim, dübel, mıknatıs ve kırlangıç kuyruğu noktaları kesit boyunca, kalın bölgelere yakın ve aralıklı dağılır. Kesim yüzüne tıklayarak elle pim ya da dübel ekle; her noktanın çapı, boyu ve tipi ayrı ayarlanır.
 
 <img src="screenshots/jointedit.jpg" alt="Elle pim ve dübel düzenleme modu" width="100%" />
 
@@ -64,7 +76,7 @@ Kesim yüzlerine oyulan `03-07` etiketi: bu yüz P03'e ait ve P07 ile birleşir.
 <img src="screenshots/labels.jpg" alt="Parça numaraları ve etiketlerle patlatılmış görünüm" width="100%" />
 
 ### Konuşan asistan Dot ve 10 dil
-Dot seçtiğin dilde sesli anlatım yapar, 14 adımlık rehberli tur verir ve "bu adımda ne yapmalıyım?" sorusunu yanıtlar. Arayüz Türkçe, English, Deutsch, 中文, 日本語, 한국어, العربية (sağdan sola), Français, Italiano ve Español dillerinde.
+Dot seçtiğin dilde sesli anlatım yapar, 16 adımlık rehberli tur verir ve "bu adımda ne yapmalıyım?" sorusunu yanıtlar. Arayüz Türkçe, English, Deutsch, 中文, 日本語, 한국어, العربية (sağdan sola), Français, Italiano ve Español dillerinde.
 
 <img src="screenshots/lang-ar.jpg" alt="Sağdan sola Arapça arayüz" width="100%" />
 
@@ -100,7 +112,8 @@ Eğri kesim çizme · akıllı seç & ayır (kulak, burun gibi detaylar) · kesi
 - **Print step:** plate layout, best print face per part, surface-following anchored skirt and mouse ears, 8 filament profiles
 - **Export:** STL (ZIP), colored 3MF, per-plate STL, printable quote and assembly guide
 - **Built-in quote:** filament, print time, machine, assembly, setup and margin
-- **Dot**, a talking assistant with a 14-step guided tour, in 10 languages including right-to-left Arabic
+- **Dot**, a talking assistant with a 16-step guided tour, in 10 languages including right-to-left Arabic
+- **New in v0.5.0:** studio lighting with soft shadows and a selection outline, a View menu (`V`) to show or hide panels and tune light, shadows and background, a hideable and resizable side panel, on-scene dimensions, new shortcuts, and an About dialog with release notes
 
 **[▶ Open the live app](https://fixral3d.github.io/fixral-3d-splitter/?lang=en)**
 
@@ -109,4 +122,6 @@ Eğri kesim çizme · akıllı seç & ayır (kulak, burun gibi detaylar) · kesi
 Bu depo yalnızca canlı sitenin derlenmiş dosyalarını barındırır; kaynak kodu paylaşılmamaktadır.
 This repository only hosts the built files of the live site; the source code is not public.
 
-© 2026 Erdem Erciyas. Tüm hakları saklıdır. All rights reserved.
+**Fixral 3D Splitter / Slicer v0.5.0** · [fixral.com](https://fixral.com) · [fixral3d@gmail.com](mailto:fixral3d@gmail.com)
+
+© 2026 Fixral. Tüm hakları saklıdır. All rights reserved.
