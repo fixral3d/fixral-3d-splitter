@@ -9,7 +9,7 @@
     <meta name="keywords" content="Fixral, 3D splitter, 3D slicer, STL splitter, STL bölme, 3D model bölme, split STL, split 3D model, cut STL, mesh splitter, 3D printing, 3D baskı, oversized model, large print, dowel, pin joint, dovetail, magnet joint, build volume, Bambu Lab, Prusa, Creality, 3MF, online STL tool, browser 3D tool, free" />
     <meta name="author" content="Erdem Erciyas" />
     <meta name="application-name" content="Fixral 3D Splitter / Slicer" />
-    <meta name="generator" content="Fixral 3D Splitter v0.5.0" />
+    <meta name="generator" content="Fixral 3D Splitter v0.6.0" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://fixral3d.github.io/fixral-3d-splitter/" />
     <link rel="alternate" hreflang="x-default" href="https://fixral3d.github.io/fixral-3d-splitter/" />
@@ -65,7 +65,7 @@
         "applicationSubCategory": "3D printing",
         "operatingSystem": "Any (modern web browser)",
         "browserRequirements": "Requires JavaScript, WebGL and WebAssembly",
-        "softwareVersion": "0.5.0",
+        "softwareVersion": "0.6.0",
         "isAccessibleForFree": true,
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "inLanguage": ["tr", "en", "de", "zh", "ja", "ko", "ar", "fr", "it", "es"],
@@ -85,7 +85,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="./assets/index-DjB9ZcEO.js"></script>
+    <script type="module" crossorigin src="./assets/index-DxfgDkVn.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-DRnjNU2y.css">
   </head>
   <body data-step="prepare">
@@ -100,6 +100,7 @@
         <symbol id="i-rotate" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-2.6-6.4L21 8"/><path d="M21 3v5h-5"/></symbol>
         <symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 5 5 10-11"/></symbol>
         <symbol id="i-scale" viewBox="0 0 24 24"><path d="M21 3h-6m6 0v6m0-6-7 7M3 21h6m-6 0v-6m0 6 7-7"/></symbol>
+        <symbol id="i-mirror" viewBox="0 0 24 24"><path d="M12 2v20M8 6 3 12l5 6zM16 6l5 6-5 6z"/></symbol>
         <symbol id="i-shell" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><rect x="7.5" y="7.5" width="9" height="9" rx="1.5" stroke-dasharray="2 2"/></symbol>
         <symbol id="i-printer" viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16"/><path d="M2.5 21h19M8 3v4h8V3M8 14h8v4H8z"/></symbol>
         <symbol id="i-save" viewBox="0 0 24 24"><path d="M5 3h11l4 4v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 1-2z"/><path d="M8 3v5h7V3M8 21v-7h8v7"/></symbol>
@@ -155,7 +156,7 @@
           <path d="m28 11.1-10.5 5.8v11.6" fill="none" stroke="url(#bm)" stroke-width="2" stroke-linejoin="round" opacity=".55"/>
         </svg>
         <span class="brand-name" translate="no">Fixral <b>3D</b><small lang="en">Splitter / Slicer</small></span>
-        <span class="badge" id="aboutBadge" translate="no" role="button" tabindex="0" aria-label="Hakkında ve sürüm notları" data-tip="Hakkında ve sürüm notları">v0.5.0</span>
+        <span class="badge" id="aboutBadge" role="button" tabindex="0" aria-label="Hakkında ve sürüm notları" data-tip="Hakkında ve sürüm notları">v0.6.0</span>
       </a>
 
       <nav id="steps" aria-label="İş akışı adımları">
@@ -302,6 +303,14 @@
           <button id="rotate" class="ghost" disabled><svg class="i"><use href="#i-rotate"/></svg><span>Döndür</span></button>
           <button id="rotateApply" hidden><svg class="i"><use href="#i-check"/></svg>Uygula</button>
         </div>
+        <div class="field">
+          <span class="field-label">Aynala <small>Modelin simetriğini alır (sağ parça soldan)</small></span>
+          <div class="row3">
+            <button id="mirrorX" class="ghost" disabled data-tip="X ekseninde aynala (sol ↔ sağ)"><svg class="i"><use href="#i-mirror"/></svg><span class="ax ax-x">X</span></button>
+            <button id="mirrorY" class="ghost" disabled data-tip="Y ekseninde aynala (ön ↔ arka)"><svg class="i"><use href="#i-mirror"/></svg><span class="ax ax-y">Y</span></button>
+            <button id="mirrorZ" class="ghost" disabled data-tip="Z ekseninde aynala (alt ↔ üst)"><svg class="i"><use href="#i-mirror"/></svg><span class="ax ax-z">Z</span></button>
+          </div>
+        </div>
         <div id="rotatehelp" class="muted hint-box" hidden>Yayları sürükle (<span class="ax-x">X kırmızı</span>, <span class="ax-y">Y yeşil</span>, <span class="ax-z">Z mavi</span>) · 5° adım · <kbd>Ctrl</kbd> 1° · <kbd>Shift</kbd> serbest · <kbd>Esc</kbd> iptal</div>
       </section>
 
@@ -428,7 +437,9 @@
             <label>Derinlik / ray·dil boyu (mm) <input type="number" id="depth" value="8" step="1" min="1" /></label>
             <label>Boşluk (mm) <input type="number" id="clearance" value="0.2" step="0.05" min="0" /></label>
             <label>Et kalınlığı (mm) <input type="number" id="wall" value="2" step="0.5" min="0" /></label>
-            <label>Yüz başına en fazla pim <input type="number" id="maxJoints" value="4" step="1" min="1" max="12" /></label>
+            <label>Yüz başına en fazla bağlantı <input type="number" id="maxJoints" value="4" step="1" min="1" max="12" /></label>
+            <label>Bağlantı aralığı (mm, 0 = otomatik) <input type="number" id="spacing" value="0" step="5" min="0" /></label>
+            <label>Kırlangıç açısı (°) <input type="number" id="dovetailAngle" value="15" step="1" min="5" max="35" /></label>
           </div>
         </details>
         <label class="check switch"><input type="checkbox" id="labels" checked /> <span>Parça numarası oy<small>Kesim yüzüne ör. 03-07 kabartılır</small></span></label>
@@ -612,7 +623,7 @@
       <section data-step="print">
         <h2><svg class="i"><use href="#i-download"/></svg>Dışa aktar</h2>
         <label class="check switch"><input type="checkbox" id="pfIncludeExtras" checked /> <span>Skirt ve mouse ear'ı STL'ye dahil et<small>Kapalıysa yalnız modeller indirilir</small></span></label>
-        <button id="pfExport3mf" class="ghost"><svg class="i"><use href="#i-download"/></svg>3MF olarak indir <small>tabla başına · renkli</small></button>
+        <button id="pfExport3mf" class="ghost"><svg class="i"><use href="#i-download"/></svg>3MF olarak indir <small>tüm tablalar tek dosyada · renkli</small></button>
       </section>
 
       <div class="actions pair" data-step="print">
@@ -726,7 +737,7 @@
       </form>
     </dialog>
 
-    <dialog id="about" aria-labelledby="aboutTitle" data-version="0.5.0">
+    <dialog id="about" aria-labelledby="aboutTitle" data-version="0.6.0">
       <form method="dialog">
         <header>
           <h2 id="aboutTitle"><svg class="i"><use href="#i-info"/></svg><span translate="no">Fixral 3D <span lang="en">Splitter / Slicer</span></span></h2>
@@ -752,6 +763,6 @@
         </div>
       </form>
     </dialog>
-
+
   </body>
 </html>
