@@ -6,13 +6,13 @@
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-LKGBNLY394');</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#07090d" />
+    <meta name="theme-color" content="#17191e" />
     <title>Fixral 3D Splitter / Slicer · Model bölme stüdyosu</title>
     <meta name="description" content="Fixral 3D Splitter / Slicer — büyük 3D modelleri yazıcı hacmine göre böl, pim ve dübellerle birleştir, baskıya hazır indir." />
-    <meta name="keywords" content="Fixral, 3D splitter, 3D slicer, STL splitter, STL bölme, 3D model bölme, split STL, split 3D model, cut STL, mesh splitter, 3D printing, 3D baskı, oversized model, large print, dowel, pin joint, dovetail, magnet joint, build volume, Bambu Lab, Prusa, Creality, 3MF, online STL tool, browser 3D tool, free" />
+    <meta name="keywords" content="3D model bölme, STL bölme, 3D baskı için model bölme, büyük model bölme, 3D model splitter, STL splitter, split STL online, split 3D model for printing, oversized 3D model, pin joint, dowel joint, magnet joint, wooden dowel, dovetail joint, lap joint, build volume, plate layout, mouse ears, anti-warping skirt, numbered parts, 3MF export, mesh repair, mesh simplification, hollowing, Bambu Lab, Prusa, Creality, Elegoo, Anycubic, Sovol, Qidi, Flashforge, free, browser-based, Fixral" />
     <meta name="author" content="Erdem Erciyas" />
     <meta name="application-name" content="Fixral 3D Splitter / Slicer" />
-    <meta name="generator" content="Fixral 3D Splitter v0.6.0" />
+    <meta name="generator" content="Fixral 3D Splitter v0.7.0" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://fixral3d.github.io/fixral-3d-splitter/" />
     <link rel="alternate" hreflang="x-default" href="https://fixral3d.github.io/fixral-3d-splitter/" />
@@ -68,19 +68,22 @@
         "applicationSubCategory": "3D printing",
         "operatingSystem": "Any (modern web browser)",
         "browserRequirements": "Requires JavaScript, WebGL and WebAssembly",
-        "softwareVersion": "0.6.0",
+        "softwareVersion": "0.7.0",
         "isAccessibleForFree": true,
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "inLanguage": ["tr", "en", "de", "zh", "ja", "ko", "ar", "fr", "it", "es"],
         "author": { "@type": "Person", "name": "Erdem Erciyas" },
         "featureList": [
-          "Automatic splitting to printer build volume",
+          "Automatic splitting to the printer build volume (27 printer models or custom size)",
+          "Printer bed preview with brand, size and mm ruler",
           "Pins, dowels, magnets, wooden dowels, dovetail and lap joints",
-          "Mesh repair, simplification and hollowing",
+          "Mesh repair, simplification, mirroring and hollowing",
           "Curved cuts and smart selection extraction",
-          "Numbered parts, print orientation, STL / 3MF / ZIP export",
+          "Numbered parts, also on thin parts",
+          "Print step: orientation that fits the bed, rotate parts, pick the bed face, skirt rods and mouse ears",
+          "Plate layout and multi-plate 3MF (one model per plate), STL and ZIP export",
           "Cost and print time estimate",
-          "Interactive voice assistant and guided tour",
+          "Voice assistant with guided tour",
           "10 interface languages"
         ]
       }
@@ -88,8 +91,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="./assets/index-DxfgDkVn.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DRnjNU2y.css">
+    <script type="module" crossorigin src="./assets/index-TTAg443F.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-5qYDGMHD.css">
   </head>
   <body data-step="prepare">
     <!-- İkon seti: 24px ızgara, 1.75 çizgi, yuvarlak uç (Lucide uyumlu) -->
@@ -151,16 +154,14 @@
 
     <header id="topbar">
       <a class="brand" href="./" aria-label="Fixral 3D Splitter / Slicer">
-        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
-          <defs><linearGradient id="bm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34e3a8"/><stop offset="1" stop-color="#4f8dff"/></linearGradient></defs>
-          <path d="M14.5 3.5 4 9.3v11.6l10.5 5.8" fill="none" stroke="url(#bm)" stroke-width="2" stroke-linejoin="round"/>
-          <path d="M4 9.3 14.5 15v11.7M14.5 15l3-1.6" fill="none" stroke="url(#bm)" stroke-width="2" stroke-linejoin="round"/>
-          <path d="M17.5 5.3 28 11.1v11.6l-10.5 5.8-3-1.6" fill="none" stroke="url(#bm)" stroke-width="2" stroke-linejoin="round" opacity=".55"/>
-          <path d="m28 11.1-10.5 5.8v11.6" fill="none" stroke="url(#bm)" stroke-width="2" stroke-linejoin="round" opacity=".55"/>
-        </svg>
+        <!-- Logo: ana sayfa animasyonunun küçüğü (2×2×2 ayrık küp + kesim düzlemi). three.js varsa canlı sürümü (logo3d.ts) bunun yerini alır. -->
+        <span class="brand-logo" aria-hidden="true">
+          <svg class="brand-mark" viewBox="0 0 32 32"><path d="M21.09 19.92L16 22.46L16 16.23L21.09 13.69Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M10.91 19.92L16 22.46L16 16.23L10.91 13.69Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M16 11.14L21.09 13.69L16 16.23L10.91 13.69Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M21.09 11.19L16 13.74L16 7.51L21.09 4.96Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M10.91 11.19L16 13.74L16 7.51L10.91 4.96Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M16 2.42L21.09 4.96L16 7.51L10.91 4.96Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M13.97 23.48L8.88 26.02L8.88 19.79L13.97 17.25Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M3.79 23.48L8.88 26.02L8.88 19.79L3.79 17.25Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M8.88 14.7L13.97 17.25L8.88 19.79L3.79 17.25Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M13.97 14.75L8.88 17.3L8.88 11.07L13.97 8.52Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M3.79 14.75L8.88 17.3L8.88 11.07L3.79 8.52Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M8.88 5.98L13.97 8.52L8.88 11.07L3.79 8.52Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M23.89 21.71L8.11 29.6L8.11 10.29L23.89 2.4Z" fill="rgba(79,141,255,0.22)" stroke="#4f8dff" stroke-width="0.48" stroke-linejoin="round"/><path d="M28.21 23.48L23.12 26.02L23.12 19.79L28.21 17.25Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M18.03 23.48L23.12 26.02L23.12 19.79L18.03 17.25Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M23.12 14.7L28.21 17.25L23.12 19.79L18.03 17.25Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M28.21 14.75L23.12 17.3L23.12 11.07L28.21 8.52Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M18.03 14.75L23.12 17.3L23.12 11.07L18.03 8.52Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M23.12 5.98L28.21 8.52L23.12 11.07L18.03 8.52Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M21.09 27.04L16 29.58L16 23.35L21.09 20.81Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M10.91 27.04L16 29.58L16 23.35L10.91 20.81Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M16 18.26L21.09 20.81L16 23.35L10.91 20.81Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M21.09 18.31L16 20.86L16 14.63L21.09 12.08Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M10.91 18.31L16 20.86L16 14.63L10.91 12.08Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M16 9.54L21.09 12.08L16 14.63L10.91 12.08Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/></svg>
+        </span>
         <span class="brand-name" translate="no">Fixral <b>3D</b><small lang="en">Splitter / Slicer</small></span>
-        <span class="badge" id="aboutBadge" role="button" tabindex="0" aria-label="Hakkında ve sürüm notları" data-tip="Hakkında ve sürüm notları">v0.6.0</span>
+        <span class="badge" id="aboutBadge" role="button" tabindex="0" aria-label="Hakkında ve sürüm notları" data-tip="Hakkında ve sürüm notları">v0.7.0</span>
       </a>
+      <label for="file" class="btn top-import"><svg class="i"><use href="#i-upload"/></svg><span>STL yükle</span></label>
 
       <nav id="steps" aria-label="İş akışı adımları">
         <button data-step="prepare" class="active" data-tip="Modeli yükle, ölçekle, döndür, onar">
@@ -193,14 +194,14 @@
           <div id="viewMenu" class="menu-panel" role="dialog" aria-label="Görünüm" hidden>
             <div class="mp-col">
               <h4>Göster</h4>
-              <label class="check switch desk-only"><input type="checkbox" data-pref="panel" /> <span>Sol panel <kbd>P</kbd></span></label>
               <label class="check switch"><input type="checkbox" data-pref="intro" /> <span>Adım açıklamaları</span></label>
               <label class="check switch"><input type="checkbox" data-pref="dot" /> <span>Asistan Dot</span></label>
               <label class="check switch"><input type="checkbox" data-pref="views" /> <span>Görünüm araç çubuğu</span></label>
               <label class="check switch"><input type="checkbox" data-pref="hud" /> <span>Fare ipuçları ve eksenler</span></label>
-              <label class="check switch"><input type="checkbox" data-pref="grid" /> <span>Izgara ve cetvel <kbd>G</kbd></span></label>
+              <label class="check switch"><input type="checkbox" data-pref="grid" /> <span>Zemin ızgarası <kbd>G</kbd></span></label>
+              <label class="check switch"><input type="checkbox" data-pref="bedRuler" /> <span>Tabla cetveli</span></label>
               <label class="check switch"><input type="checkbox" data-pref="dims" /> <span>Model ölçüleri</span></label>
-              <label class="check switch"><input type="checkbox" data-pref="volume" /> <span>Yazıcı hacmi kutusu</span></label>
+              <label class="check switch"><input type="checkbox" data-pref="volume" /> <span>Yazıcı tablası ve hacmi</span></label>
             </div>
             <div class="mp-col">
               <h4>Işık ve gölge</h4>
@@ -224,12 +225,6 @@
                 <button class="seltool" data-pref="bg" data-val="night">Gece</button>
                 <button class="seltool" data-pref="bg" data-val="graphite">Grafit</button>
                 <button class="seltool" data-pref="bg" data-val="studio">Stüdyo</button>
-              </div>
-              <span class="label desk-only">Panel genişliği</span>
-              <div class="seg desk-only" role="group" aria-label="Panel genişliği">
-                <button class="seltool" data-pref="panelW" data-val="300">Dar</button>
-                <button class="seltool" data-pref="panelW" data-val="0">Normal</button>
-                <button class="seltool" data-pref="panelW" data-val="440">Geniş</button>
               </div>
               <span class="label">Çözünürlük</span>
               <div class="seg" role="group" aria-label="Çözünürlük">
@@ -256,30 +251,7 @@
     </header>
 
     <aside id="panel" data-step="prepare" aria-label="Ayarlar paneli">
-      <button id="sheetHandle" class="sheet-handle" aria-label="Paneli aç / kapat" aria-expanded="true"><span></span></button>
-
-      <div class="step-intro" data-step="prepare">
-        <span class="eyebrow">Adım 1 / 5</span>
-        <h1>Modelini hazırla</h1>
-        <p>STL dosyanı yükle. Model otomatik kontrol edilir ve onarılır; ardından boyutunu, yönünü ve doluluğunu ayarla.</p>
-      </div>
-      <div class="step-intro" data-step="presplit">
-        <span class="eyebrow">Adım 2 / 5</span>
-        <h1>Bölmeyi planla</h1>
-        <p>Yazıcını seç; kesim düzlemleri hacme göre otomatik yerleşir. Düzlemleri sahnede sürükleyebilir, birleştirme türünü seçebilirsin.</p>
-      </div>
-      <div class="step-intro" data-step="explode">
-        <span class="eyebrow">Adım 4 / 5</span>
-        <h1>İncele ve indir</h1>
-        <p>Parçaları ayrık görünümde incele, gerekirse birleştir ya da sil. Hazır olduğunda STL/3MF olarak indir.</p>
-      </div>
-      <div class="step-intro" data-step="print">
-        <span class="eyebrow">Adım 5 / 5</span>
-        <h1>Tablaya hazırla</h1>
-        <p>Parçalar baskıya en uygun yüzeyleriyle tablalara yerleşir. Aynı tablaya birden fazla parça koyabilir, taban kalkmasına karşı çubuklu skirt ve mouse ear ekleyebilirsin.</p>
-      </div>
-
-      <section data-step="prepare">
+      <section data-step="prepare" data-sec="model">
         <h2><svg class="i"><use href="#i-cube"/></svg>Model</h2>
         <p class="lead">Desteklenen biçim: STL (ikili ya da ASCII). Dosyayı sahneye de bırakabilirsin.</p>
         <label class="drop" id="drop">
@@ -289,11 +261,9 @@
           <small>En iyi sonuç için kapalı (su geçirmez) mesh</small>
         </label>
         <button id="sample" class="ghost"><svg class="i"><use href="#i-cube"/></svg>Örnek model yükle</button>
-        <div id="info" class="muted">Model yüklenmedi.</div>
-        <div id="repair" class="muted"></div>
       </section>
 
-      <section data-step="prepare">
+      <section data-step="prepare" data-sec="size">
         <h2><svg class="i"><use href="#i-scale"/></svg>Boyut ve yön</h2>
         <p class="lead">Bir boyuta "850mm", "120%" ya da "1.5" (çarpan) yaz; diğerleri orantılı ölçeklenir.</p>
         <label>Ölçek (%) <input type="number" id="scale" value="100" min="1" step="any" inputmode="decimal" /></label>
@@ -317,7 +287,7 @@
         <div id="rotatehelp" class="muted hint-box" hidden>Yayları sürükle (<span class="ax-x">X kırmızı</span>, <span class="ax-y">Y yeşil</span>, <span class="ax-z">Z mavi</span>) · 5° adım · <kbd>Ctrl</kbd> 1° · <kbd>Shift</kbd> serbest · <kbd>Esc</kbd> iptal</div>
       </section>
 
-      <section data-step="prepare">
+      <section data-step="prepare" data-sec="mesh">
         <h2><svg class="i"><use href="#i-wand"/></svg>Mesh optimizasyonu</h2>
         <p class="lead">Çok yoğun modelleri sadeleştirmek tüm işlemleri hızlandırır. Sapma, yüzeyin en fazla ne kadar kayabileceğidir.</p>
         <div class="row2 bottom">
@@ -330,7 +300,7 @@
         <label>Kabuk duvarı (mm) <input type="number" id="shellWall" value="3" step="0.5" min="1" inputmode="decimal" /></label>
       </section>
 
-      <section data-step="prepare">
+      <section data-step="prepare" data-sec="select">
         <h2><svg class="i"><use href="#i-select"/></svg>Seç ve ayır</h2>
         <p class="lead">Kulak, burun gibi ince detayları ayrı parça olarak çıkar; böylece desteksiz ve sağlam basılır.</p>
         <button id="selectMode" class="ghost" disabled><svg class="i"><use href="#i-select"/></svg><span>Seçim modunu aç</span></button>
@@ -369,11 +339,7 @@
         <ul id="extracts"></ul>
       </section>
 
-      <div class="actions" data-step="prepare">
-        <button id="toPresplit" disabled>Ön bölmeye geç<svg class="i"><use href="#i-arrow-right"/></svg></button>
-      </div>
-
-      <section data-step="presplit">
+      <section data-step="presplit" data-sec="printer">
         <h2><svg class="i"><use href="#i-printer"/></svg>Yazıcı</h2>
         <p class="lead">Baskı hacmi her parçanın sığması gereken kutudur (sahnede turuncu).</p>
         <select id="printer" aria-label="Yazıcı"></select>
@@ -389,7 +355,7 @@
         <label>Kenar payı (mm) <input type="number" id="margin" value="10" min="0" inputmode="decimal" /></label>
       </section>
 
-      <section data-step="presplit">
+      <section data-step="presplit" data-sec="joint">
         <h2><svg class="i"><use href="#i-joint"/></svg>Birleştirme</h2>
         <p class="lead">Parçaların montajda nasıl hizalanıp tutunacağını belirler. Emin değilsen şablonla başla.</p>
         <div class="field">
@@ -448,7 +414,7 @@
         <label class="check switch"><input type="checkbox" id="labels" checked /> <span>Parça numarası oy<small>Kesim yüzüne ör. 03-07 kabartılır</small></span></label>
       </section>
 
-      <section data-step="presplit">
+      <section data-step="presplit" data-sec="cuts">
         <h2><svg class="i"><use href="#i-cuts"/></svg>Kesimler</h2>
         <p class="lead">Düzlemler sahnede sürüklenebilir. Optimizasyon, çok ince dilimler oluşmasını engeller.</p>
         <label class="check switch"><input type="checkbox" id="optimize" checked /> <span>Otomatik optimize et<small>İnce parçalardan kaçınır</small></span></label>
@@ -459,7 +425,7 @@
         <button id="replan" class="ghost"><svg class="i"><use href="#i-rotate"/></svg>Kesimleri sıfırla / yeniden hesapla</button>
       </section>
 
-      <section data-step="presplit">
+      <section data-step="presplit" data-sec="curve">
         <h2><svg class="i"><use href="#i-curve"/></svg>Eğri kesim</h2>
         <p class="lead">Düz düzlem yetmediğinde serbest bir kesim yüzeyi çiz; detayları çevresinden ayırmak için idealdir.</p>
         <div class="row2 bottom">
@@ -477,13 +443,7 @@
         <ul id="curves"></ul>
       </section>
 
-      <div class="row2 actions" data-step="presplit">
-        <button id="split" disabled><svg class="i"><use href="#i-split"/></svg>Böl</button>
-        <button id="cancelSplit" class="ghost" hidden><svg class="i"><use href="#i-x"/></svg>İptal</button>
-      </div>
-      <div id="status" class="muted" data-step="presplit explode" role="status" aria-live="polite"></div>
-
-      <section id="result" data-step="explode" data-result hidden>
+      <section id="result" data-step="explode" data-sec="result" data-result hidden>
         <h2><svg class="i"><use href="#i-explode"/></svg>Sonuç</h2>
         <label class="check switch"><input type="checkbox" id="printview" /> <span>Baskı konumunda göster<small>Parçalar tablalara yerleşik</small></span></label>
         <label>Ayrık görünüm <input type="range" id="explode" min="0" max="1" step="0.01" value="0.3" /></label>
@@ -494,7 +454,7 @@
         </div>
       </section>
 
-      <section data-step="explode" data-result hidden>
+      <section data-step="explode" data-sec="parts" data-result hidden>
         <h2><svg class="i"><use href="#i-cube"/></svg>Parçalar</h2>
         <button id="jointEdit" class="ghost small" data-tip="Yalnız kesim yüzlerinde: boş yere tıkla ekle · mevcut işarete tıkla sil"><svg class="i"><use href="#i-edit"/></svg>Pim / dübel ekle-sil</button>
         <div id="jointEditInfo" class="jointedit" hidden>
@@ -526,7 +486,7 @@
         <div id="partinfo" class="muted">Parçaya tıkla: seç · <kbd>Ctrl</kbd>+tık: seçime ekle · <kbd>E</kbd>/<kbd>T</kbd>: aç/topla · <kbd>Del</kbd>: sil · <kbd>Ctrl</kbd>+<kbd>Z</kbd>: geri al</div>
       </section>
 
-      <section data-step="explode" data-result hidden>
+      <section data-step="explode" data-sec="export" data-result hidden>
         <h2><svg class="i"><use href="#i-download"/></svg>Dışa aktar</h2>
         <div class="export-group">
           <button id="export"><svg class="i"><use href="#i-download"/></svg>ZIP olarak indir <small>STL + teklif</small></button>
@@ -534,7 +494,7 @@
         </div>
       </section>
 
-      <section id="quote" data-step="explode" data-result hidden>
+      <section id="quote" data-step="explode" data-sec="quote" data-result hidden>
         <h2><svg class="i"><use href="#i-receipt"/></svg>Teklif (tahmini)</h2>
         <details class="adv">
           <summary><svg class="i"><use href="#i-sliders"/></svg>Fiyat ve baskı ayarları<svg class="i chev"><use href="#i-chevron"/></svg></summary>
@@ -555,12 +515,7 @@
         <div class="muted">Filament ve süre, kabuk + dolgu modeliyle tahmin edilir; kesin değerler dilimleyiciden gelir.</div>
       </section>
 
-      <div class="actions pair" data-step="explode" data-result hidden>
-        <button id="edit" class="ghost"><svg class="i"><use href="#i-edit"/></svg>Kesimleri düzenle</button>
-        <button id="toPrint"><svg class="i"><use href="#i-printer"/></svg>Baskıya hazırla<svg class="i"><use href="#i-arrow-right"/></svg></button>
-      </div>
-
-      <section data-step="print">
+      <section data-step="print" data-sec="layout">
         <h2><svg class="i"><use href="#i-printer"/></svg>Tabla yerleşimi</h2>
         <label>Filament
           <select id="pfFilament">
@@ -583,25 +538,60 @@
         </label>
         <label class="check switch"><input type="checkbox" id="pfMulti" checked /> <span>Bir tablaya birden fazla model<small>Sığan parçalar aynı tablada toplanır</small></span></label>
         <label>Parçalar arası boşluk (mm) <input type="number" id="pfSpacing" value="6" min="1" step="1" /></label>
-        <button id="pfLayFlat" class="ghost small"><svg class="i"><use href="#i-rotate"/></svg>Tablaya değecek yüzü seç (elle)</button>
-        <div id="pfLayFlatInfo" class="muted hint-box" hidden>Sahnede bir parçanın yüzüne tıkla: o yüz tablaya oturur.</div>
+        <span class="field-label">Parçalar <small>Tıkla: seç ve döndür · kutu: baskıya dahil</small></span>
+        <ul id="pfParts"></ul>
+        <div id="pfSummary" class="muted" role="status" aria-live="polite"></div>
       </section>
 
-      <section data-step="print">
-        <h2><svg class="i"><use href="#i-sliders"/></svg>Çubuklu skirt ve mouse ear</h2>
-        <p class="muted">ABS, ASA gibi çeken filamentlerde taban ve köşe kalkmasını önler: tabladaki taban plakasının üstünde dik duran üçgen prizma, ön kenarıyla modele hafifçe değer. Baskıdan sonra yana bükerek kırılır. Destek eklenmez; o dilimleyicinin işi.</p>
-        <div class="row2">
-          <label>Skirt (tümü)
-            <select id="pfAllSkirt"><option value="">—</option><option value="auto">Oto</option><option value="on">Açık</option><option value="off">Kapalı</option></select>
-          </label>
-          <label>Ear (tümü)
-            <select id="pfAllEars"><option value="">—</option><option value="auto">Oto</option><option value="on">Açık</option><option value="off">Kapalı</option></select>
-          </label>
+      <section data-step="print" data-sec="pfpart">
+        <h2><svg class="i"><use href="#i-rotate"/></svg>Seçili parça</h2>
+        <p id="pfPickHint" class="lead">Sahnede ya da parça listesinde bir parçaya tıkla; yönünü ve desteklerini buradan değiştir.</p>
+        <div id="pfPartTools" class="pf-part" hidden>
+          <div class="pf-sel"><i id="pfSelColor"></i><b id="pfSelName" translate="no"></b><span id="pfSelInfo" class="muted"></span></div>
+          <span class="field-label">Döndür <small>Sahnedeki halkayı sürükle ya da düğmeleri kullan</small></span>
+          <div class="pf-rot" role="group" aria-label="Döndür">
+            <button class="ghost small" data-rot="z,-90" data-tip="Z ekseninde -90°">Z −90°</button>
+            <button class="ghost small" data-rot="z,-15" data-tip="Z ekseninde -15°">Z −15°</button>
+            <button class="ghost small" data-rot="z,15" data-tip="Z ekseninde +15°">Z +15°</button>
+            <button class="ghost small" data-rot="z,90" data-tip="Z ekseninde +90°">Z +90°</button>
+            <button class="ghost small" data-rot="x,90" data-tip="X ekseninde 90° yatır">X 90°</button>
+            <button class="ghost small" data-rot="y,90" data-tip="Y ekseninde 90° yatır">Y 90°</button>
+          </div>
+          <div class="row2">
+            <button id="pfLayFlat" class="ghost small"><svg class="i"><use href="#i-select"/></svg>Tabana gelecek yüzü seç</button>
+            <button id="pfResetOrient" class="ghost small"><svg class="i"><use href="#i-undo"/></svg>Otomatik yöne dön</button>
+          </div>
+          <div id="pfLayFlatInfo" class="muted hint-box" hidden>Bir parçanın düz yüzünün üzerine gel (yeşil vurgulanır) ve tıkla: o yüz tablaya oturur, parça tablaya sığacak şekilde döndürülüp yeniden yerleştirilir. Diğer parçalarla devam edebilirsin; Esc ile bitir.</div>
+          <span class="field-label">Skirt çubukları <small id="pfPartSkirtNote"></small></span>
+          <div class="seg" id="pfPartSkirt" role="group" aria-label="Skirt çubukları">
+            <button class="seltool" data-val="auto">Otomatik</button><button class="seltool" data-val="on">Açık</button><button class="seltool" data-val="off">Kapalı</button>
+          </div>
+          <span class="field-label">Mouse ear <small id="pfPartEarNote"></small></span>
+          <div class="seg" id="pfPartEars" role="group" aria-label="Mouse ear">
+            <button class="seltool" data-val="auto">Otomatik</button><button class="seltool" data-val="on">Açık</button><button class="seltool" data-val="off">Kapalı</button>
+          </div>
+          <button id="pfAnchorEdit" class="ghost small"><svg class="i"><use href="#i-edit"/></svg>Çubukları elle düzenle</button>
+          <div id="pfAnchorInfo" class="muted hint-box" hidden>Modelin yan yüzüne tıkla: oraya çubuk eklenir · turuncu çubuğa tıkla: silinir. Otomatik çubuklar ilk düzenlemede elle listesine geçer.</div>
         </div>
-        <button id="pfAnchorEdit" class="ghost small"><svg class="i"><use href="#i-edit"/></svg>Çubuk ekle / sil (elle)</button>
-        <div id="pfAnchorInfo" class="muted hint-box" hidden>Modelin yan yüzüne tıkla: oraya çubuk eklenir · turuncu çubuğa tıkla: silinir. Otomatik çubuklar ilk düzenlemede elle listesine geçer.</div>
-        <details class="adv" open>
-          <summary><svg class="i"><use href="#i-sliders"/></svg>Skirt özelleştirme<svg class="i chev"><use href="#i-chevron"/></svg></summary>
+      </section>
+
+      <section data-step="print" data-sec="skirt">
+        <h2><svg class="i"><use href="#i-sliders"/></svg>Skirt ve mouse ear</h2>
+        <dl class="pf-explain">
+          <dt>Skirt çubukları</dt><dd>Modelin yanına yaslanan küçük prizmalar. Uzun ve ince parçaları dik tutar, köşe kalkmasını önler; baskıdan sonra yana bükülerek kırılır.</dd>
+          <dt>Mouse ear</dt><dd>Köşelere eklenen ince diskler. Tabanın tablaya tutunmasını artırır; baskıdan sonra kesilip atılır.</dd>
+        </dl>
+        <span class="field-label">Skirt çubukları <small>tüm parçalar</small></span>
+        <div class="seg" id="pfAllSkirt" role="group" aria-label="Skirt çubukları">
+          <button class="seltool" data-val="auto">Otomatik</button><button class="seltool" data-val="on">Hepsine</button><button class="seltool" data-val="off">Hiçbirine</button>
+        </div>
+        <span class="field-label">Mouse ear <small>tüm parçalar</small></span>
+        <div class="seg" id="pfAllEars" role="group" aria-label="Mouse ear">
+          <button class="seltool" data-val="auto">Otomatik</button><button class="seltool" data-val="on">Hepsine</button><button class="seltool" data-val="off">Hiçbirine</button>
+        </div>
+        <div id="pfAutoNote" class="muted hint-box"></div>
+        <details class="adv">
+          <summary><svg class="i"><use href="#i-sliders"/></svg>Ölçüler (gelişmiş)<svg class="i chev"><use href="#i-chevron"/></svg></summary>
           <div class="row2">
             <label>Çubuk aralığı (mm) <input type="number" id="pfSpacingA" min="10" step="5" data-tip="Otomatik yerleşimde çevre boyunca en fazla bu kadar arayla çubuk" /></label>
             <label>Prizma yüksekliği (mm, 0 = oto) <input type="number" id="pfHeight" value="0" min="0" step="1" /></label>
@@ -619,24 +609,100 @@
           </div>
           <button id="pfDefaults" class="ghost small"><svg class="i"><use href="#i-undo"/></svg>Filament varsayılanlarına dön</button>
         </details>
-        <ul id="pfParts"></ul>
-        <div id="pfSummary" class="muted" role="status" aria-live="polite"></div>
       </section>
 
-      <section data-step="print">
+      <section data-step="print" data-sec="pfexport">
         <h2><svg class="i"><use href="#i-download"/></svg>Dışa aktar</h2>
         <label class="check switch"><input type="checkbox" id="pfIncludeExtras" checked /> <span>Skirt ve mouse ear'ı STL'ye dahil et<small>Kapalıysa yalnız modeller indirilir</small></span></label>
-        <button id="pfExport3mf" class="ghost"><svg class="i"><use href="#i-download"/></svg>3MF olarak indir <small>tüm tablalar tek dosyada · renkli</small></button>
+        <button id="pfExport3mf" class="ghost"><svg class="i"><use href="#i-download"/></svg>3MF olarak indir <small>tüm tablalar tek dosyada · tabla başına bir model</small></button>
       </section>
+    </aside>
 
-      <div class="actions pair" data-step="print">
+    <!-- Alt araç çubuğu: adımın araçları (bölümleri popover olarak açar) ve ana eylem -->
+    <div id="dock" role="toolbar" aria-label="Araçlar">
+      <div class="dock-tools" data-step="prepare">
+        <button class="dock-btn" data-sec="model" data-tip="Model"><svg class="i"><use href="#i-cube"/></svg><span>Model</span></button>
+        <button class="dock-btn" data-sec="size" data-tip="Boyut ve yön"><svg class="i"><use href="#i-scale"/></svg><span>Boyut ve yön</span></button>
+        <button class="dock-btn" data-sec="mesh" data-tip="Mesh optimizasyonu"><svg class="i"><use href="#i-wand"/></svg><span>Optimizasyon</span></button>
+        <button class="dock-btn" data-sec="select" data-tip="Seç ve ayır"><svg class="i"><use href="#i-select"/></svg><span>Seç ve ayır</span></button>
+      </div>
+      <div class="dock-tools" data-step="presplit">
+        <button class="dock-btn" data-sec="printer" data-tip="Yazıcı"><svg class="i"><use href="#i-printer"/></svg><span>Yazıcı</span></button>
+        <button class="dock-btn" data-sec="joint" data-tip="Birleştirme"><svg class="i"><use href="#i-joint"/></svg><span>Birleştirme</span></button>
+        <button class="dock-btn" data-sec="cuts" data-tip="Kesimler"><svg class="i"><use href="#i-cuts"/></svg><span>Kesimler</span></button>
+        <button class="dock-btn" data-sec="curve" data-tip="Eğri kesim"><svg class="i"><use href="#i-curve"/></svg><span>Eğri kesim</span></button>
+      </div>
+      <div class="dock-tools" data-step="explode" data-result hidden>
+        <button class="dock-btn" data-sec="result" data-tip="Sonuç"><svg class="i"><use href="#i-explode"/></svg><span>Sonuç</span></button>
+        <button class="dock-btn" data-sec="parts" data-tip="Parçalar"><svg class="i"><use href="#i-cube"/></svg><span>Parçalar</span></button>
+        <button class="dock-btn" data-sec="export" data-tip="Dışa aktar"><svg class="i"><use href="#i-download"/></svg><span>Dışa aktar</span></button>
+        <button class="dock-btn" data-sec="quote" data-tip="Teklif (tahmini)"><svg class="i"><use href="#i-receipt"/></svg><span>Teklif</span></button>
+      </div>
+      <div class="dock-tools" data-step="print">
+        <button class="dock-btn" data-sec="layout" data-tip="Tabla yerleşimi"><svg class="i"><use href="#i-printer"/></svg><span>Tabla yerleşimi</span></button>
+        <button class="dock-btn" data-sec="pfpart" data-tip="Seçili parça"><svg class="i"><use href="#i-rotate"/></svg><span>Parça</span></button>
+        <button class="dock-btn" data-sec="skirt" data-tip="Skirt ve mouse ear"><svg class="i"><use href="#i-sliders"/></svg><span>Skirt</span></button>
+        <button class="dock-btn" data-sec="pfexport" data-tip="Dışa aktar"><svg class="i"><use href="#i-download"/></svg><span>Dışa aktar</span></button>
+      </div>
+      <span class="dock-sep" aria-hidden="true"></span>
+      <div class="actions" data-step="prepare">
+        <button id="toPresplit" disabled>Ön bölmeye geç<svg class="i"><use href="#i-arrow-right"/></svg></button>
+      </div>
+      <div class="actions" data-step="presplit">
+        <button id="cancelSplit" class="ghost" hidden><svg class="i"><use href="#i-x"/></svg>İptal</button>
+        <button id="split" disabled><svg class="i"><use href="#i-split"/></svg>Böl</button>
+      </div>
+      <div class="actions" data-step="explode" data-result hidden>
+        <button id="edit" class="ghost"><svg class="i"><use href="#i-edit"/></svg>Kesimleri düzenle</button>
+        <button id="toPrint"><svg class="i"><use href="#i-printer"/></svg>Baskıya hazırla<svg class="i"><use href="#i-arrow-right"/></svg></button>
+      </div>
+      <div class="actions" data-step="print">
         <button id="toExplode" class="ghost"><svg class="i"><use href="#i-explode"/></svg>Parçala'ya dön</button>
         <button id="pfExport"><svg class="i"><use href="#i-download"/></svg>Tablaları indir <small>ZIP · STL</small></button>
       </div>
-    </aside>
-    <div id="panelResizer" role="separator" aria-orientation="vertical" aria-label="Panel genişliği" tabindex="0"></div>
+    </div>
 
     <main id="view" aria-label="3D sahne">
+      <!-- Sol üst bilgi kartı: adım, model özeti ve durum -->
+      <div id="infoCard">
+        <div class="step-intro" data-step="prepare">
+          <span class="eyebrow">Adım 1 / 5</span>
+          <h1>Modelini hazırla</h1>
+          <p>STL dosyanı yükle. Model otomatik kontrol edilir ve onarılır; ardından boyutunu, yönünü ve doluluğunu ayarla.</p>
+        </div>
+        <div class="step-intro" data-step="presplit">
+          <span class="eyebrow">Adım 2 / 5</span>
+          <h1>Bölmeyi planla</h1>
+          <p>Yazıcını seç; kesim düzlemleri hacme göre otomatik yerleşir. Düzlemleri sahnede sürükleyebilir, birleştirme türünü seçebilirsin.</p>
+        </div>
+        <div class="step-intro" data-step="explode">
+          <span class="eyebrow">Adım 4 / 5</span>
+          <h1>İncele ve indir</h1>
+          <p>Parçaları ayrık görünümde incele, gerekirse birleştir ya da sil. Hazır olduğunda STL/3MF olarak indir.</p>
+        </div>
+        <div class="step-intro" data-step="print">
+          <span class="eyebrow">Adım 5 / 5</span>
+          <h1>Tablaya hazırla</h1>
+          <p>Parçalar baskıya en uygun yüzeyleriyle tablalara yerleşir. Aynı tablaya birden fazla parça koyabilir, taban kalkmasına karşı çubuklu skirt ve mouse ear ekleyebilirsin.</p>
+        </div>
+        <div id="info" class="muted">Model yüklenmedi.</div>
+        <div id="repair" class="muted"></div>
+        <div id="status" class="muted" data-step="presplit explode" role="status" aria-live="polite"></div>
+      </div>
+
+      <!-- Sol alt görünüm küpü: kamerayla birlikte döner, yüzüne tıklayınca o yönden bakar -->
+      <div id="cube" aria-label="Görünüm küpü">
+        <div class="cube-stage">
+          <div class="cube-box">
+            <button class="cube-face f-top" data-dir="0,-0.02,1" aria-label="Üstten görünüm">Üst</button>
+            <button class="cube-face f-bottom" data-dir="0,-0.02,-1" aria-label="Alt">Alt</button>
+            <button class="cube-face f-front" data-dir="0,-1,0" aria-label="Önden görünüm">Ön</button>
+            <button class="cube-face f-back" data-dir="0,1,0" aria-label="Arka">Arka</button>
+            <button class="cube-face f-right" data-dir="1,0,0" aria-label="Sağ">Sağ</button>
+            <button class="cube-face f-left" data-dir="-1,0,0" aria-label="Sol">Sol</button>
+          </div>
+        </div>
+      </div>
       <div id="empty" class="empty">
         <span class="eyebrow">3D model bölme stüdyosu</span>
         <h2>Büyük modelleri <em>yazıcına sığdır</em></h2>
@@ -665,9 +731,8 @@
         <button class="tool" id="fit" aria-label="Modeli ekrana sığdır" data-tip="Sığdır" data-tip-pos="left"><svg class="i"><use href="#i-fit"/></svg></button>
         <button class="tool" id="section" aria-label="Kesit görünümü" data-tip="Kesit: modelin önünü gizleyip içine bak" data-tip-pos="left"><svg class="i"><use href="#i-section"/></svg></button>
         <button class="tool" id="wire" aria-label="Üçgen ağını göster" data-tip="Üçgenler (tel kafes)" data-tip-pos="left"><svg class="i"><use href="#i-mesh"/></svg></button>
-        <button class="tool active" id="gridBtn" aria-label="Zemin ızgarası ve cetvel" data-tip="Izgara ve cetvel: göster / gizle" data-tip-pos="left"><svg class="i"><use href="#i-grid"/></svg></button>
+        <button class="tool active" id="gridBtn" aria-label="Zemin ızgarası" data-tip="Zemin ızgarası: göster / gizle" data-tip-pos="left"><svg class="i"><use href="#i-grid"/></svg></button>
       </div>
-      <button id="panelShow" class="glass-btn" aria-label="Paneli göster" data-tip="Paneli göster (P)"><svg class="i"><use href="#i-panel-left"/></svg></button>
 
       <div class="hud" aria-hidden="true">
         <span class="hud-item mouse-only"><svg class="i"><use href="#i-mouse"/></svg>Sol: döndür · Sağ: kaydır · Tekerlek: yakınlaş</span>
@@ -675,6 +740,16 @@
         <span class="axes-legend"><i class="ax-x">X</i><i class="ax-y">Y</i><i class="ax-z">Z</i></span>
       </div>
     </main>
+
+    <!-- Bekleme göstergesi: işlem sürerken ekranı kaplar, tıklamaları engeller -->
+    <div id="busy" role="alertdialog" aria-modal="true" aria-busy="true" aria-labelledby="busyText" hidden>
+      <div class="busy-card">
+        <span class="busy-logo brand-logo" id="busyLogo" aria-hidden="true"><svg class="brand-mark" viewBox="0 0 32 32"><path d="M21.09 19.92L16 22.46L16 16.23L21.09 13.69Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M10.91 19.92L16 22.46L16 16.23L10.91 13.69Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M16 11.14L21.09 13.69L16 16.23L10.91 13.69Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M21.09 11.19L16 13.74L16 7.51L21.09 4.96Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M10.91 11.19L16 13.74L16 7.51L10.91 4.96Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M16 2.42L21.09 4.96L16 7.51L10.91 4.96Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M13.97 23.48L8.88 26.02L8.88 19.79L13.97 17.25Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M3.79 23.48L8.88 26.02L8.88 19.79L3.79 17.25Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M8.88 14.7L13.97 17.25L8.88 19.79L3.79 17.25Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M13.97 14.75L8.88 17.3L8.88 11.07L13.97 8.52Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M3.79 14.75L8.88 17.3L8.88 11.07L3.79 8.52Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M8.88 5.98L13.97 8.52L8.88 11.07L3.79 8.52Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M23.89 21.71L8.11 29.6L8.11 10.29L23.89 2.4Z" fill="rgba(79,141,255,0.22)" stroke="#4f8dff" stroke-width="0.48" stroke-linejoin="round"/><path d="M28.21 23.48L23.12 26.02L23.12 19.79L28.21 17.25Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M18.03 23.48L23.12 26.02L23.12 19.79L18.03 17.25Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M23.12 14.7L28.21 17.25L23.12 19.79L18.03 17.25Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M28.21 14.75L23.12 17.3L23.12 11.07L28.21 8.52Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M18.03 14.75L23.12 17.3L23.12 11.07L18.03 8.52Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M23.12 5.98L28.21 8.52L23.12 11.07L18.03 8.52Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M21.09 27.04L16 29.58L16 23.35L21.09 20.81Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M10.91 27.04L16 29.58L16 23.35L10.91 20.81Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M16 18.26L21.09 20.81L16 23.35L10.91 20.81Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M21.09 18.31L16 20.86L16 14.63L21.09 12.08Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M10.91 18.31L16 20.86L16 14.63L10.91 12.08Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M16 9.54L21.09 12.08L16 14.63L10.91 12.08Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/></svg></span>
+        <b id="busyText">İşleniyor…</b>
+        <small id="busySub" aria-live="polite"></small>
+        <button id="busyCancel" class="ghost small" hidden><svg class="i"><use href="#i-x"/></svg>İptal</button>
+      </div>
+    </div>
 
     <dialog id="shortcuts" aria-labelledby="shortcutsTitle">
       <form method="dialog">
@@ -698,7 +773,7 @@
               <dt><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd></dt><dd>Üst · ön · yan · izometrik</dd>
               <dt><kbd>F</kbd></dt><dd>Sığdır</dd>
               <dt><kbd>G</kbd> · <kbd>X</kbd> · <kbd>W</kbd></dt><dd>Izgara · kesit · tel kafes</dd>
-              <dt><kbd>P</kbd> · <kbd>V</kbd></dt><dd>Sol panel · görünüm menüsü</dd>
+              <dt><kbd>P</kbd> · <kbd>V</kbd></dt><dd>Araç paneli · görünüm menüsü</dd>
             </dl>
           </section>
           <section>
@@ -740,7 +815,7 @@
       </form>
     </dialog>
 
-    <dialog id="about" aria-labelledby="aboutTitle" data-version="0.6.0">
+    <dialog id="about" aria-labelledby="aboutTitle" data-version="0.7.0">
       <form method="dialog">
         <header>
           <h2 id="aboutTitle"><svg class="i"><use href="#i-info"/></svg><span translate="no">Fixral 3D <span lang="en">Splitter / Slicer</span></span></h2>
@@ -766,6 +841,6 @@
         </div>
       </form>
     </dialog>
-
+
   </body>
 </html>
