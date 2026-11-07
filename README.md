@@ -41,6 +41,12 @@
 
 <img src="screenshots/prepare.jpg" alt="Hazırla adımı: tam ekran sahnede model ve eksen renkli ölçü etiketleri" width="100%" />
 
+## v0.9.0'da yeni
+
+- **Uygulama gibi kullan:** "Uygulamayı yükle" ile ana ekrana ya da masaüstüne ekle; tam ekran açılır, bir kez açtıktan sonra internetsiz de çalışır. iPhone/iPad'de Safari'nin "Paylaş → Ana Ekrana Ekle" adımları gösterilir.
+- **Sakin baskı ekranı:** sahne tıklaması için araç seç: `Seç · Döndür · Ear · Çubuk`. Döndürme yalnız Döndür aracında; ear ve çubuk eklemek ya da döndürmek tablaları yeniden dizmez, parça yerinde kalır. İstersen "Tablalara yeniden yerleştir".
+- **Yeni Dot** ve **yeni örnek model:** ekran yüzlü küçük robot asistan; örnek olarak burgulu bir vazo.
+
 ## v0.8.0'da yeni
 
 - **Daha net iş akışı:** beş ana adım alttaki çubukta, her adımın araçları sağ kenardaki rayda. İlk kullanımda Dot bakılacak araçları sayar, henüz açmadıkların yeşil noktayla işaretlenir.
@@ -133,7 +139,8 @@ Bambu Lab X1 Carbon / X1E, P1S / P1P, P2S, A1, A1 mini, H2D, H2S · Prusa MK4S /
 - **Joints:** pyramid or cylinder pins, separate dowels, neodymium magnet pockets, wooden dowels, dovetails and lap joints, placed along each cross-section
 - **Model prep:** automatic mesh repair, simplification, scaling, rotation, mirroring, hollowing, smart select & extract
 - **Numbered parts** with engraved `03-07` mating labels, also on thin parts
-- **Print step:** orientation that always fits the bed, rotate one or several parts (buttons or a drag ring), pick the bed face, per-part skirt rods and mouse ears placed automatically or by clicking, 8 filament profiles
+- **Installable app:** add to your home screen or desktop, full screen, works offline after the first visit
+- **Print step:** orientation that always fits the bed, a click tool (Select, Rotate, Ear, Rod) so nothing moves unless you ask, rotate one or several parts (buttons or a drag ring), pick the bed face, per-part skirt rods and mouse ears placed automatically or by clicking, 8 filament profiles
 - **Export:** STL (ZIP), colored 3MF, per-plate STL and a multi-plate 3MF with one model per plate
 - **Built-in quote** and a printable assembly guide
 - **Dot**, a talking assistant with a guided tour, in 10 languages including right-to-left Arabic
