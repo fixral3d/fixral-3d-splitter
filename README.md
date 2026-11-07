@@ -34,12 +34,18 @@
 | Adım | Ne yapar? |
 |---|---|
 | **1 · Hazırla** | STL'i sürükle. Sahnede yalnız model ve ölçüleri: otomatik mesh onarımı, sadeleştirme, ölçekleme (`850mm`, `120%`, `1.5`), döndürme, aynalama, içini boşaltma. |
-| **2 · Ön bölme** | Yazıcı modelini seç; tablası (marka, ölçü, mm cetveli) ve kesim düzlemleri gelir. Birleştirme şablonunu seç, düzlemleri sürükle ya da eğri kesim çiz. |
+| **2 · Ön bölme** | Yazıcı modelini seç; tablası (marka, ölçü, mm cetveli) ve kesim düzlemleri gelir. Birleştirme şablonunu seç; düzlemleri sürükle, kesim ekle ya da sil, düzlemi açılı kesime çevir ya da eğri kesim çiz. |
 | **3 · Böl** | Parçalar ve bağlantılar arka planda saniyeler içinde üretilir; ilerleme ekranın ortasında görünür. |
 | **4 · Parçala** | Parçaları ayrık görünümde incele, birleştir, sil; kesim yüzüne pim, dübel ya da kama ekle, işarete tıklayıp sil. ZIP veya 3MF olarak indir. |
-| **5 · Baskı** | Parçalar tablaya sığan en uygun yönle tablalara yerleşir; bir ya da birkaç parçayı döndür ya da tabana gelecek yüzü seç; gerekiyorsa skirt ve mouse ear'ı tıklayarak ya da seçili parçalara toplu ekle; tabla başına STL ya da çok tablalı 3MF. |
+| **5 · Baskı** | Parçalar tablaya sığan en uygun yönle tablalara yerleşir; bir ya da birkaç parçayı döndür ya da tabana gelecek yüzü seç; basılan dübel ve kamalar da tablalara gelir; gerekiyorsa skirt ve mouse ear'ı tıklayarak ya da seçili parçalara toplu ekle; tabla başına STL ya da çok tablalı 3MF. |
 
 <img src="screenshots/prepare.jpg" alt="Hazırla adımı: tam ekran sahnede model ve eksen renkli ölçü etiketleri" width="100%" />
+
+## v0.11.0'da yeni
+
+- **Dübel ve kamalar tablada:** basılan dübeller ve kelebek kamalar baskı tablalarına adedince yerleşir ve tablalarla birlikte STL ya da 3MF olarak iner.
+- **Geri al / yinele her adımda:** alt çubuktaki düğmeler ya da `Ctrl`+`Z` / `Ctrl`+`Y`; kesimler, parça silme ve birleştirme, bağlantı düzenleme ve baskı yerleşimi geri alınır.
+- **Kesim ekle, sil, açıyla döndür:** istediğin eksene kesim ekle; düzleme tıklayıp sil ya da bir eksen etrafında istediğin açıyla eğ.
 
 ## v0.10.0'da yeni
 
