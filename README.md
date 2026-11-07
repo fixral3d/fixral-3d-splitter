@@ -37,9 +37,15 @@
 | **2 · Ön bölme** | Yazıcı modelini seç; tablası (marka, ölçü, mm cetveli) ve kesim düzlemleri gelir. Birleştirme şablonunu seç, düzlemleri sürükle ya da eğri kesim çiz. |
 | **3 · Böl** | Parçalar ve bağlantılar arka planda saniyeler içinde üretilir; ilerleme ekranın ortasında görünür. |
 | **4 · Parçala** | Parçaları ayrık görünümde incele, birleştir, sil; kesim yüzüne pim ya da dübel ekle. ZIP veya 3MF olarak indir. |
-| **5 · Baskı** | Parçalar tablaya sığan en uygun yönle tablalara yerleşir; parçayı döndür ya da tabana gelecek yüzü seç; skirt ve mouse ear ekle; tabla başına STL ya da çok tablalı 3MF. |
+| **5 · Baskı** | Parçalar tablaya sığan en uygun yönle tablalara yerleşir; bir ya da birkaç parçayı döndür ya da tabana gelecek yüzü seç; skirt ve mouse ear'ı otomatik ya da fareyle istediğin yere ekle; tabla başına STL ya da çok tablalı 3MF. |
 
 <img src="screenshots/prepare.jpg" alt="Hazırla adımı: tam ekran sahnede model ve eksen renkli ölçü etiketleri" width="100%" />
+
+## v0.8.0'da yeni
+
+- **Daha net iş akışı:** beş ana adım alttaki çubukta, her adımın araçları sağ kenardaki rayda. İlk kullanımda Dot bakılacak araçları sayar, henüz açmadıkların yeşil noktayla işaretlenir.
+- **Çoklu seçimle döndürme:** baskı adımında `Ctrl`+tık ya da "Tümünü seç" ile birkaç parçayı birlikte döndür.
+- **Mouse ear'ı fareyle yerleştir:** parçayı seç, kenarına ya da yanındaki tablaya tıkla; 1, 4 ya da hiç, sayı senin seçimin. Skirt çubukları da tablaya tıklayarak eklenir.
 
 ## v0.7.0'da yeni
 
@@ -122,12 +128,12 @@ Bambu Lab X1 Carbon / X1E, P1S / P1P, P2S, A1, A1 mini, H2D, H2S · Prusa MK4S /
 
 **Fixral 3D Splitter / Slicer** splits oversized STL models to fit your 3D printer's build volume, entirely in your browser. No install, no account, and your file never leaves your computer: all geometry runs locally with WebAssembly.
 
-- **Full-screen workspace:** bottom toolbar, settings in a right-side panel, view cube, a centred progress card for long operations
+- **Full-screen workspace:** the five main steps in a bottom bar, each step's tools in a right-side rail with a settings panel, a first-run guide, view cube, a centred progress card for long operations
 - **27 printer models** (Bambu Lab, Prusa, Creality, Elegoo, Anycubic, Sovol, Qidi, Flashforge) or a custom size, with the printer's bed drawn in the scene
 - **Joints:** pyramid or cylinder pins, separate dowels, neodymium magnet pockets, wooden dowels, dovetails and lap joints, placed along each cross-section
 - **Model prep:** automatic mesh repair, simplification, scaling, rotation, mirroring, hollowing, smart select & extract
 - **Numbered parts** with engraved `03-07` mating labels, also on thin parts
-- **Print step:** orientation that always fits the bed, rotate any part (buttons or a drag ring), pick the bed face, per-part skirt rods and mouse ears, 8 filament profiles
+- **Print step:** orientation that always fits the bed, rotate one or several parts (buttons or a drag ring), pick the bed face, per-part skirt rods and mouse ears placed automatically or by clicking, 8 filament profiles
 - **Export:** STL (ZIP), colored 3MF, per-plate STL and a multi-plate 3MF with one model per plate
 - **Built-in quote** and a printable assembly guide
 - **Dot**, a talking assistant with a guided tour, in 10 languages including right-to-left Arabic
