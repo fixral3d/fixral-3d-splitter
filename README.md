@@ -4,7 +4,7 @@
 
 # Fixral 3D Splitter / Slicer
 
-**Büyük 3D modelleri yazıcına sığdır.** Ücretsiz, tarayıcıda çalışan 3D model bölme (STL splitter) aracı: STL modelini yazıcının baskı hacmine göre böl; pim, dübel, mıknatıs, ahşap kavela, kırlangıç kuyruğu ya da bindirmeyle birleştir; numaralı parçaları yazıcının tablalarına yerleştirip STL ya da 3MF olarak indir.
+**Büyük 3D modelleri yazıcına sığdır.** Ücretsiz, tarayıcıda çalışan 3D model bölme (STL splitter) aracı: STL modelini yazıcının baskı hacmine göre böl; pim, dübel, mıknatıs, ahşap kavela, kırlangıç kuyruğu, bindirme ya da ince plakalar için kelebek kamayla birleştir; numaralı parçaları yazıcının tablalarına yerleştirip STL ya da 3MF olarak indir.
 
 **Fit oversized 3D models on your printer.** A free, in-browser 3D model splitter: cut STL files to your build volume, join them with pins, dowels, magnets, dovetails or lap joints, lay the numbered parts out on your printer's plates and export STL or 3MF.
 
@@ -36,10 +36,16 @@
 | **1 · Hazırla** | STL'i sürükle. Sahnede yalnız model ve ölçüleri: otomatik mesh onarımı, sadeleştirme, ölçekleme (`850mm`, `120%`, `1.5`), döndürme, aynalama, içini boşaltma. |
 | **2 · Ön bölme** | Yazıcı modelini seç; tablası (marka, ölçü, mm cetveli) ve kesim düzlemleri gelir. Birleştirme şablonunu seç, düzlemleri sürükle ya da eğri kesim çiz. |
 | **3 · Böl** | Parçalar ve bağlantılar arka planda saniyeler içinde üretilir; ilerleme ekranın ortasında görünür. |
-| **4 · Parçala** | Parçaları ayrık görünümde incele, birleştir, sil; kesim yüzüne pim ya da dübel ekle. ZIP veya 3MF olarak indir. |
-| **5 · Baskı** | Parçalar tablaya sığan en uygun yönle tablalara yerleşir; bir ya da birkaç parçayı döndür ya da tabana gelecek yüzü seç; skirt ve mouse ear'ı otomatik ya da fareyle istediğin yere ekle; tabla başına STL ya da çok tablalı 3MF. |
+| **4 · Parçala** | Parçaları ayrık görünümde incele, birleştir, sil; kesim yüzüne pim, dübel ya da kama ekle, işarete tıklayıp sil. ZIP veya 3MF olarak indir. |
+| **5 · Baskı** | Parçalar tablaya sığan en uygun yönle tablalara yerleşir; bir ya da birkaç parçayı döndür ya da tabana gelecek yüzü seç; gerekiyorsa skirt ve mouse ear'ı tıklayarak ya da seçili parçalara toplu ekle; tabla başına STL ya da çok tablalı 3MF. |
 
 <img src="screenshots/prepare.jpg" alt="Hazırla adımı: tam ekran sahnede model ve eksen renkli ölçü etiketleri" width="100%" />
+
+## v0.10.0'da yeni
+
+- **İnce plakalar için kelebek kama:** kesim çizgisinin ortasına iki parçaya eşit giren bir cep açılır; plaka kalınlığında, ayrı basılan kama içine oturup parçaları kilitler. Sivri (kelebek) ya da damla (oval) uçlu: parça kesim yüzü tablada basılsa da cep köprüsüz, desteksiz çıkar. Kamalar otomatik yerleşir; genişlik, uzunluk ve boyun ayarlanır, yerleri tıklayarak eklenip silinir.
+- **Skirt ve mouse ear isteğe bağlı:** hiçbir parçaya kendiliğinden eklenmez. Herhangi bir parçaya tek tıkla tek ear ya da çubuk ekle, ya da seçili parçalara toplu ekle/kaldır.
+- **Daha güvenilir elle bağlantı düzenleme:** pim/dübel işaretine tıklayınca silinir; kenara ya da başka bağlantıya çok yakın yer kırmızı gösterilir ve eklenmez.
 
 ## v0.9.0'da yeni
 
@@ -136,11 +142,11 @@ Bambu Lab X1 Carbon / X1E, P1S / P1P, P2S, A1, A1 mini, H2D, H2S · Prusa MK4S /
 
 - **Full-screen workspace:** the five main steps in a bottom bar, each step's tools in a right-side rail with a settings panel, a first-run guide, view cube, a centred progress card for long operations
 - **27 printer models** (Bambu Lab, Prusa, Creality, Elegoo, Anycubic, Sovol, Qidi, Flashforge) or a custom size, with the printer's bed drawn in the scene
-- **Joints:** pyramid or cylinder pins, separate dowels, neodymium magnet pockets, wooden dowels, dovetails and lap joints, placed along each cross-section
+- **Joints:** pyramid or cylinder pins, separate dowels, neodymium magnet pockets, wooden dowels, dovetails, lap joints and butterfly keys for thin plates (a separately printed key as thick as the plate, with ends that print without supports), placed along each cross-section
 - **Model prep:** automatic mesh repair, simplification, scaling, rotation, mirroring, hollowing, smart select & extract
 - **Numbered parts** with engraved `03-07` mating labels, also on thin parts
 - **Installable app:** add to your home screen or desktop, full screen, works offline after the first visit
-- **Print step:** orientation that always fits the bed, a click tool (Select, Rotate, Ear, Rod) so nothing moves unless you ask, rotate one or several parts (buttons or a drag ring), pick the bed face, per-part skirt rods and mouse ears placed automatically or by clicking, 8 filament profiles
+- **Print step:** orientation that always fits the bed, a click tool (Select, Rotate, Ear, Rod) so nothing moves unless you ask, rotate one or several parts (buttons or a drag ring), pick the bed face, optional skirt rods and mouse ears added one at a time by clicking or in bulk to the selected parts, 8 filament profiles
 - **Export:** STL (ZIP), colored 3MF, per-plate STL and a multi-plate 3MF with one model per plate
 - **Built-in quote** and a printable assembly guide
 - **Dot**, a talking assistant with a guided tour, in 10 languages including right-to-left Arabic

@@ -9,10 +9,10 @@
     <meta name="theme-color" content="#17191e" />
     <title>Fixral 3D Splitter / Slicer · Model bölme stüdyosu</title>
     <meta name="description" content="Fixral 3D Splitter / Slicer — büyük 3D modelleri yazıcı hacmine göre böl, pim ve dübellerle birleştir, baskıya hazır indir." />
-    <meta name="keywords" content="3D model bölme, STL bölme, 3D baskı için model bölme, büyük model bölme, 3D model splitter, STL splitter, split STL online, split 3D model for printing, oversized 3D model, pin joint, dowel joint, magnet joint, wooden dowel, dovetail joint, lap joint, build volume, plate layout, mouse ears, anti-warping skirt, numbered parts, 3MF export, mesh repair, mesh simplification, hollowing, Bambu Lab, Prusa, Creality, Elegoo, Anycubic, Sovol, Qidi, Flashforge, free, browser-based, Fixral" />
+    <meta name="keywords" content="3D model bölme, STL bölme, 3D baskı için model bölme, büyük model bölme, 3D model splitter, STL splitter, split STL online, split 3D model for printing, oversized 3D model, pin joint, dowel joint, magnet joint, wooden dowel, dovetail joint, lap joint, butterfly key, build volume, plate layout, mouse ears, anti-warping skirt, numbered parts, 3MF export, mesh repair, mesh simplification, hollowing, Bambu Lab, Prusa, Creality, Elegoo, Anycubic, Sovol, Qidi, Flashforge, free, browser-based, Fixral" />
     <meta name="author" content="Erdem Erciyas" />
     <meta name="application-name" content="Fixral 3D Splitter / Slicer" />
-    <meta name="generator" content="Fixral 3D Splitter v0.9.0" />
+    <meta name="generator" content="Fixral 3D Splitter v0.10.0" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://fixral3d.github.io/fixral-3d-splitter/" />
     <link rel="alternate" hreflang="x-default" href="https://fixral3d.github.io/fixral-3d-splitter/" />
@@ -67,12 +67,12 @@
         "alternateName": ["Fixral 3D Splitter", "Fixral 3D Slicer", "Fixral"],
         "url": "https://fixral3d.github.io/fixral-3d-splitter/",
         "image": "https://fixral3d.github.io/fixral-3d-splitter/og-image.jpg",
-        "description": "Free in-browser tool that splits oversized 3D models (STL) to fit a printer's build volume, adds pins, dowels, magnets, dovetail or lap joints, numbers the parts and exports STL/3MF with a cost estimate.",
+        "description": "Free in-browser tool that splits oversized 3D models (STL) to fit a printer's build volume, adds pins, dowels, magnets, dovetail, lap joints or butterfly keys, numbers the parts and exports STL/3MF with a cost estimate.",
         "applicationCategory": "DesignApplication",
         "applicationSubCategory": "3D printing",
         "operatingSystem": "Any (modern web browser)",
         "browserRequirements": "Requires JavaScript, WebGL and WebAssembly",
-        "softwareVersion": "0.9.0",
+        "softwareVersion": "0.10.0",
         "isAccessibleForFree": true,
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "inLanguage": ["tr", "en", "de", "zh", "ja", "ko", "ar", "fr", "it", "es"],
@@ -80,7 +80,7 @@
         "featureList": [
           "Automatic splitting to the printer build volume (27 printer models or custom size)",
           "Printer bed preview with brand, size and mm ruler",
-          "Pins, dowels, magnets, wooden dowels, dovetail and lap joints",
+          "Pins, dowels, magnets, wooden dowels, dovetail and lap joints, butterfly keys for thin plates",
           "Mesh repair, simplification, mirroring and hollowing",
           "Curved cuts and smart selection extraction",
           "Numbered parts, also on thin parts",
@@ -95,7 +95,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="./assets/index-Amx2mUxy.js"></script>
+    <script type="module" crossorigin src="./assets/index-eO8Dh3lK.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-BSZAbOSY.css">
   </head>
   <body data-step="prepare">
@@ -166,7 +166,7 @@
           <svg class="brand-mark" viewBox="0 0 32 32"><path d="M21.09 19.92L16 22.46L16 16.23L21.09 13.69Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M10.91 19.92L16 22.46L16 16.23L10.91 13.69Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M16 11.14L21.09 13.69L16 16.23L10.91 13.69Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M21.09 11.19L16 13.74L16 7.51L21.09 4.96Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M10.91 11.19L16 13.74L16 7.51L10.91 4.96Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M16 2.42L21.09 4.96L16 7.51L10.91 4.96Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M13.97 23.48L8.88 26.02L8.88 19.79L13.97 17.25Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M3.79 23.48L8.88 26.02L8.88 19.79L3.79 17.25Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M8.88 14.7L13.97 17.25L8.88 19.79L3.79 17.25Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M13.97 14.75L8.88 17.3L8.88 11.07L13.97 8.52Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M3.79 14.75L8.88 17.3L8.88 11.07L3.79 8.52Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M8.88 5.98L13.97 8.52L8.88 11.07L3.79 8.52Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M23.89 21.71L8.11 29.6L8.11 10.29L23.89 2.4Z" fill="rgba(79,141,255,0.22)" stroke="#4f8dff" stroke-width="0.48" stroke-linejoin="round"/><path d="M28.21 23.48L23.12 26.02L23.12 19.79L28.21 17.25Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M18.03 23.48L23.12 26.02L23.12 19.79L18.03 17.25Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M23.12 14.7L28.21 17.25L23.12 19.79L18.03 17.25Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M28.21 14.75L23.12 17.3L23.12 11.07L28.21 8.52Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M18.03 14.75L23.12 17.3L23.12 11.07L18.03 8.52Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M23.12 5.98L28.21 8.52L23.12 11.07L18.03 8.52Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M21.09 27.04L16 29.58L16 23.35L21.09 20.81Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M10.91 27.04L16 29.58L16 23.35L10.91 20.81Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M16 18.26L21.09 20.81L16 23.35L10.91 20.81Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M21.09 18.31L16 20.86L16 14.63L21.09 12.08Z" fill="#173d44" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M10.91 18.31L16 20.86L16 14.63L10.91 12.08Z" fill="#1f505a" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/><path d="M16 9.54L21.09 12.08L16 14.63L10.91 12.08Z" fill="#2b6d76" stroke="#34e3a8" stroke-width="0.6" stroke-linejoin="round"/></svg>
         </span>
         <span class="brand-name" translate="no">Fixral <b>3D</b><small lang="en">Splitter / Slicer</small></span>
-        <span class="badge" id="aboutBadge" role="button" tabindex="0" aria-label="Hakkında ve sürüm notları" data-tip="Hakkında ve sürüm notları">v0.9.0</span>
+        <span class="badge" id="aboutBadge" role="button" tabindex="0" aria-label="Hakkında ve sürüm notları" data-tip="Hakkında ve sürüm notları">v0.10.0</span>
       </a>
       <label for="file" class="btn top-import"><svg class="i"><use href="#i-upload"/></svg><span>STL yükle</span></label>
 
@@ -364,12 +364,27 @@
             <option value="pin">Erkek/dişi pim</option>
             <option value="dovetail">Kırlangıç kuyruğu (kayar ray)</option>
             <option value="lap">Bindirme (lap joint, kenarı izleyen dil)</option>
+            <option value="key">Kelebek kama (ince plakalar, ayrı basılan kama)</option>
             <option value="none">Yok (düz kesim)</option>
           </select>
           <div class="tpl-grid joint-grid" id="jointGrid" role="radiogroup" aria-label="Bağlantı türü"></div>
         </div>
         <div class="tpl-preview" id="tplPreview" aria-live="polite"></div>
-        <div class="row2">
+        <div id="keyOpts" hidden>
+          <div class="row2">
+            <label>Kama şekli
+              <select id="keyShape">
+                <option value="bowtie">Kelebek (sivri uçlu)</option>
+                <option value="oval">Oval (damla uçlu)</option>
+              </select>
+            </label>
+            <label>Kama genişliği (mm) <input type="number" id="keyWidth" value="16" step="1" min="4" /></label>
+            <label>Kama uzunluğu (mm) <input type="number" id="keyLength" value="40" step="1" min="8" /></label>
+            <label>Boyun genişliği (mm) <input type="number" id="keyNeck" value="7" step="0.5" min="2" /></label>
+          </div>
+          <p class="muted">Kama, plakanın kalınlığında otomatik oluşur ve ayrı basılır. Uçları sivri olduğu için cep, parça kesim yüzü tablada basılsa da köprüsüz ve desteksiz çıkar. Sayı ve aralık: Ölçüler ve toleranslar.</p>
+        </div>
+        <div class="row2" id="pinOpts">
           <label>Pim şekli
             <select id="tenonShape">
               <option value="cylinder">Silindir</option>
@@ -444,6 +459,8 @@
         <button id="jointEdit" class="ghost small" data-tip="Yalnız kesim yüzlerinde: boş yere tıkla ekle · mevcut işarete tıkla sil"><svg class="i"><use href="#i-edit"/></svg>Pim / dübel ekle-sil</button>
         <div id="jointEditInfo" class="jointedit" hidden>
           <p class="muted">Fareyi kesim yüzlerinde gezdir: yüzeye yapışan işaret yeri gösterir (<b style="color:#3fe0a0">yeşil</b>: eklenecek, <b style="color:#d946ef">mor</b>: mevcut, silinecek). Tıklayınca yalnızca işaretlenir (<b style="color:#4da3ff">mavi</b>: eklenecek, mor: silinecek; tekrar tıklayınca geri alınır). Hazır olunca "Uygula"ya bas: yalnız ilgili iki parça yeniden işlenir.</p>
+          <p id="manKeyNote" class="muted" hidden>Kelebek kamada ölçüler genel kama ayarından gelir; yalnız yer eklenir ya da silinir.</p>
+          <div id="manSpec">
           <div id="dowelPreview" class="dowelpreview" role="img" aria-label="Dübel önizlemesi"></div>
           <div class="seg seg2" role="group" aria-label="Tip">
             <button type="button" id="manCyl" class="ghost small seltool">Silindir</button>
@@ -453,6 +470,7 @@
           <label>Boy (derinlik) <output id="manDepthV"></output><input type="range" id="manDepth" min="2" max="40" step="0.5" value="8" /></label>
           <label id="manTaperRow">Uç daralması <output id="manTaperV"></output><input type="range" id="manTaper" min="0" max="80" step="5" value="50" /></label>
           <label>Boşluk <output id="manClearanceV"></output><input type="range" id="manClearance" min="0" max="0.6" step="0.05" value="0.2" /></label>
+          </div>
           <div class="row2">
             <button id="jointApply" class="small" disabled>Uygula</button>
             <button id="manReset" class="ghost small" data-tip="Sürgüleri genel pim/dübel ayarına eşitle">Genel ayara dön</button>
@@ -562,8 +580,8 @@
             </div>
             <div id="pfLayFlatInfo" class="muted hint-box" hidden>Bir parçanın düz yüzünün üzerine gel (yeşil vurgulanır) ve tıkla: o yüz tablaya oturur, parça yerinde kalır. Diğer parçalarla devam edebilirsin; Esc ile bitir.</div>
           </div>
-          <div class="muted hint-box" data-for="ear">Seçili parçanın kenarına ya da hemen yanındaki tablaya tıkla: mouse ear eklenir (yeşil önizleme) · mevcut ear'a tıkla: silinir (mor). Başka bir parçaya tıklarsan önce o seçilir. Yerleşim değişmez.</div>
-          <div class="muted hint-box" data-for="anchor">Seçili parçanın yan yüzüne ya da yanındaki tablaya tıkla: skirt çubuğu eklenir · turuncu çubuğa tıkla: silinir. Başka bir parçaya tıklarsan önce o seçilir. Yerleşim değişmez.</div>
+          <div class="muted hint-box" data-for="ear">Herhangi bir parçanın kenarına ya da hemen yanındaki tablaya tıkla: ear eklenir (yeşil) · ear'a tıkla: silinir (mor) · Esc: bitir</div>
+          <div class="muted hint-box" data-for="anchor">Herhangi bir parçanın yan yüzüne ya da yanındaki tablaya tıkla: çubuk eklenir · turuncu çubuğa tıkla: silinir · Esc: bitir</div>
           <span class="field-label">Skirt çubukları <small id="pfPartSkirtNote"></small></span>
           <div class="seg" id="pfPartSkirt" role="group" aria-label="Skirt çubukları">
             <button class="seltool" data-val="auto">Otomatik</button><button class="seltool" data-val="on">Açık</button><button class="seltool" data-val="off">Kapalı</button>
@@ -581,15 +599,23 @@
           <dt>Skirt çubukları</dt><dd>Modelin yanına yaslanan küçük prizmalar. Uzun ve ince parçaları dik tutar, köşe kalkmasını önler; baskıdan sonra yana bükülerek kırılır.</dd>
           <dt>Mouse ear</dt><dd>Köşelere eklenen ince diskler. Tabanın tablaya tutunmasını artırır; baskıdan sonra kesilip atılır.</dd>
         </dl>
-        <span class="field-label">Skirt çubukları <small>tüm parçalar</small></span>
-        <div class="seg" id="pfAllSkirt" role="group" aria-label="Skirt çubukları">
-          <button class="seltool" data-val="auto">Otomatik</button><button class="seltool" data-val="on">Hepsine</button><button class="seltool" data-val="off">Hiçbirine</button>
+        <p class="lead">İsteğe bağlıdır; hiçbir parçaya kendiliğinden eklenmez. Tek tek tıklayarak ya da seçili parçalara toplu ekle.</p>
+        <span class="field-label">Mouse ear</span>
+        <div class="row3">
+          <button id="pfEarTool" class="ghost small seltool" data-tip="Parçanın kenarına tıkla: ear ekle · ear'a tıkla: sil · Esc: bitir"><svg class="i"><use href="#i-plus"/></svg>Tıklayarak</button>
+          <button id="pfEarAdd" class="ghost small" data-tip="Köşelere otomatik ear"><svg class="i"><use href="#i-plus"/></svg>Köşelere ekle</button>
+          <button id="pfEarDel" class="ghost small"><svg class="i"><use href="#i-trash"/></svg>Kaldır</button>
         </div>
-        <span class="field-label">Mouse ear <small>tüm parçalar</small></span>
-        <div class="seg" id="pfAllEars" role="group" aria-label="Mouse ear">
-          <button class="seltool" data-val="auto">Otomatik</button><button class="seltool" data-val="on">Hepsine</button><button class="seltool" data-val="off">Hiçbirine</button>
+        <span class="field-label">Skirt çubukları</span>
+        <div class="row3">
+          <button id="pfRodTool" class="ghost small seltool" data-tip="Parçanın yan yüzüne ya da yanındaki tablaya tıkla: çubuk ekle · çubuğa tıkla: sil · Esc: bitir"><svg class="i"><use href="#i-plus"/></svg>Tıklayarak</button>
+          <button id="pfRodAdd" class="ghost small" data-tip="Çevre boyunca otomatik çubuk"><svg class="i"><use href="#i-plus"/></svg>Çevreye ekle</button>
+          <button id="pfRodDel" class="ghost small"><svg class="i"><use href="#i-trash"/></svg>Kaldır</button>
         </div>
+        <div id="pfToolHint" class="muted hint-box" hidden></div>
+        <div id="pfTarget" class="muted"></div>
         <div id="pfAutoNote" class="muted hint-box"></div>
+        <button id="pfSuggest" class="ghost small"><svg class="i"><use href="#i-sliders"/></svg>Filamente göre önerileni uygula</button>
         <details class="adv">
           <summary><svg class="i"><use href="#i-sliders"/></svg>Ölçüler (gelişmiş)<svg class="i chev"><use href="#i-chevron"/></svg></summary>
           <div class="row2">
@@ -857,7 +883,7 @@
       </form>
     </dialog>
 
-    <dialog id="about" aria-labelledby="aboutTitle" data-version="0.9.0">
+    <dialog id="about" aria-labelledby="aboutTitle" data-version="0.10.0">
       <form method="dialog">
         <header>
           <h2 id="aboutTitle"><svg class="i"><use href="#i-info"/></svg><span translate="no">Fixral 3D <span lang="en">Splitter / Slicer</span></span></h2>
