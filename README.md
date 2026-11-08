@@ -33,13 +33,21 @@
 
 | Adım | Ne yapar? |
 |---|---|
-| **1 · Hazırla** | STL'i sürükle. Sahnede yalnız model ve ölçüleri: otomatik mesh onarımı, sadeleştirme, ölçekleme (`850mm`, `120%`, `1.5`), döndürme, aynalama, içini boşaltma. |
+| **1 · Hazırla** | STL, 3MF, OBJ, GLB ya da PLY'i sürükle, ya da .fixral projeni aç. Sahnede yalnız model ve ölçüleri: otomatik mesh onarımı, sadeleştirme, ölçekleme (`850mm`, `120%`, `1.5`), döndürme, aynalama, içini boşaltma. |
 | **2 · Ön bölme** | Yazıcı modelini seç; tablası (marka, ölçü, mm cetveli) ve kesim düzlemleri gelir. Birleştirme şablonunu seç; düzlemleri sürükle, kesim ekle ya da sil, düzlemi açılı kesime çevir ya da eğri kesim çiz. |
 | **3 · Böl** | Parçalar ve bağlantılar arka planda saniyeler içinde üretilir; ilerleme ekranın ortasında görünür. |
 | **4 · Parçala** | Parçaları ayrık görünümde incele, birleştir, sil; kesim yüzüne pim, dübel ya da kama ekle, işarete tıklayıp sil. ZIP veya 3MF olarak indir. |
 | **5 · Baskı** | Parçalar tablaya sığan en uygun yönle tablalara yerleşir; bir ya da birkaç parçayı döndür ya da tabana gelecek yüzü seç; basılan dübel ve kamalar da tablalara gelir; gerekiyorsa skirt ve mouse ear'ı tıklayarak ya da seçili parçalara toplu ekle; tabla başına STL ya da çok tablalı 3MF. |
 
 <img src="screenshots/prepare.jpg" alt="Hazırla adımı: tam ekran sahnede model ve eksen renkli ölçü etiketleri" width="100%" />
+
+## v0.12.0'da yeni
+
+- **Proje dosyası ve kurtarma:** çalışmanı `.fixral` olarak kaydet; sayfa kapanırsa açılışta kaldığın yerden devam et. STL'e ek olarak 3MF, OBJ, GLB ve PLY açılır; "Baskıya uygun hale getir" bozuk ya da iç içe kabuklu modelleri düzeltir.
+- **Bölmeden önce gör:** pim, dübel, kırlangıç, kelebek kama ve bindirme kesim düzlemlerinde önizlenir; yoğunluk (Az / Orta / Çok) ve modele göre otomatik ölçü.
+- **Daha çok bağlantı:** altıgen, D profil (tek yönde takılır), geçmeli ve bilyalı eklem; her kesimde pim tarafı seçilir; tolerans deneme parçası.
+- **Eğri modeller için:** açılı kesim artık her bağlantıyla çalışır, iki eksende döner; "Kesimleri modele dik hizala" kıvrık kirişlerde kesimi modele dik koyar; çoklu çizgi kesim.
+- **Montaj:** takılabilir sıra ve adım adım görüntülü, yazdırılabilir montaj kılavuzu; drenaj deliği aracı; kavisli yüzeylere de parça numarası.
 
 ## v0.11.0'da yeni
 

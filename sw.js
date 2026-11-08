@@ -3,7 +3,7 @@
 // Adı karma içeren derleme dosyaları (JS, CSS, WASM) değişmez: önce önbellekten verilir.
 // Önbellek adı sürümü taşır (kayıt: sw.js?v=X.Y.Z); yeni sürüm etkinleşince eski önbellekler silinir.
 const CACHE = 'fixral-' + (new URL(self.location.href).searchParams.get('v') || 'dev');
-const CORE = ['./', './manifest.webmanifest', './favicon.svg', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
+const CORE = ['./', './manifest.webmanifest', './favicon.svg', './favicon-32.png', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE)).then(() => self.skipWaiting()));
