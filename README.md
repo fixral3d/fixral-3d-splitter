@@ -41,6 +41,11 @@
 
 <img src="screenshots/prepare.jpg" alt="Hazırla adımı: tam ekran sahnede model ve eksen renkli ölçü etiketleri" width="100%" />
 
+## v0.13.0'da yeni
+
+- **Doğal ek yerleri:** tek tıkla kol, bacak, baş ve kulp gibi uzantılar boyun ve eklem yerlerinden ayrılır; modelin geri kalanı kesilmez, ek yerine pim ya da dübel gelir. Yazıcıya sığan uzuvlar ayrılınca gövde gereksiz yere kesilmez.
+- **Renkler korunur:** renkli 3MF, GLB, OBJ ve PLY modeller rengini kaybetmeden bölünür; parçalar kendi renkleriyle görünür, renkli 3MF olarak iner.
+
 ## v0.12.0'da yeni
 
 - **Proje dosyası ve kurtarma:** çalışmanı `.fixral` olarak kaydet; sayfa kapanırsa açılışta kaldığın yerden devam et. STL'e ek olarak 3MF, OBJ, GLB ve PLY açılır; "Baskıya uygun hale getir" bozuk ya da iç içe kabuklu modelleri düzeltir.
