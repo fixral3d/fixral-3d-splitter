@@ -4,137 +4,118 @@
 
 # Fixral 3D Splitter / Slicer
 
-**Büyük 3D modelleri yazıcına sığdır.** Ücretsiz, tarayıcıda çalışan 3D model bölme (STL splitter) aracı: STL modelini yazıcının baskı hacmine göre böl; pim, dübel, mıknatıs, ahşap kavela, kırlangıç kuyruğu, bindirme ya da ince plakalar için kelebek kamayla birleştir; numaralı parçaları yazıcının tablalarına yerleştirip STL ya da 3MF olarak indir.
+**Büyük 3D modelleri yazıcına sığdır.**
+Modeli baskı hacmine göre böl, parçaları pim, dübel ya da kırlangıç kuyruğuyla birleştir,
+numaralı parçaları tablalara yerleştirip STL ya da 3MF olarak indir. Ücretsiz.
 
-**Fit oversized 3D models on your printer.** A free, in-browser 3D model splitter: cut STL files to your build volume, join them with pins, dowels, magnets, dovetails or lap joints, lay the numbered parts out on your printer's plates and export STL or 3MF.
+**Fit oversized 3D models on your printer.** Split, join, number and lay out the parts, then export STL or 3MF. Free. [English ↓](#english)
 
-### [▶ Canlı uygulamayı aç / Open the live app](https://fixral3d.github.io/fixral-3d-splitter/)
+<br />
 
+[![Tarayıcıda aç](https://img.shields.io/badge/%E2%96%B6%20Taray%C4%B1c%C4%B1da%20a%C3%A7-Open%20in%20browser-34e3a8?style=for-the-badge)](https://fixral3d.github.io/fixral-3d-splitter/)
+&nbsp;
+[![Windows için indir](https://img.shields.io/badge/%E2%AC%87%20Windows%20i%C3%A7in%20indir-Download%20for%20Windows-4f8dff?style=for-the-badge)](https://github.com/fixral3d/fixral-3d-splitter/releases/latest)
+
+![Sürüm](https://img.shields.io/github/v/release/fixral3d/fixral-3d-splitter?label=s%C3%BCr%C3%BCm&color=34e3a8)
 ![Ücretsiz](https://img.shields.io/badge/fiyat-%C3%BCcretsiz-34e3a8)
-![Kurulum yok](https://img.shields.io/badge/kurulum-yok-4f8dff)
 ![Yazıcılar](https://img.shields.io/badge/yaz%C4%B1c%C4%B1-27%20model-ffb547)
 ![Diller](https://img.shields.io/badge/diller-10-3cc7d6)
 ![Gizlilik](https://img.shields.io/badge/dosyan-y%C3%BCklenmez-654ff0)
 
-<img src="screenshots/print.jpg" alt="Fixral 3D Splitter: yazıcı tablalarına yerleşmiş parçalar, seçili parçada döndürme halkası ve sağdaki ayar paneli" width="760" />
+<img src="screenshots/print.jpg" alt="Fixral 3D Splitter: yazıcı tablalarına yerleşmiş parçalar, seçili parçada döndürme halkası ve sağdaki ayar paneli" width="820" />
 
 </div>
 
 ---
 
+## İki yoldan kullan
+
+| | 🌐 Tarayıcıda | 🖥️ Windows uygulaması |
+|---|---|---|
+| **Başlat** | [Bağlantıyı aç](https://fixral3d.github.io/fixral-3d-splitter/), hemen kullan | [Kurulum dosyasını indir](https://github.com/fixral3d/fixral-3d-splitter/releases/latest) (`Fixral-3D-Splitter-Setup-x.y.z.exe`) |
+| **Cihaz** | Bilgisayar, tablet, telefon | Windows 10 / 11 (64 bit) |
+| **Güncelleme** | Her açılışta en son sürüm | Arka planda kendiliğinden iner; tek tıkla ya da kapanışta kurulur |
+| **İnternet** | İlk açılıştan sonra çevrimdışı da çalışır | Gerekmez (yalnız güncelleme için) |
+| **Dosyan** | Bilgisayarından çıkmaz | Bilgisayarından çıkmaz |
+
+> **Windows kurulumu hakkında:** Kurulum dosyası henüz dijital olarak imzalı olmadığı için Windows ilk açılışta *"Windows bilgisayarınızı korudu"* uyarısı gösterebilir. **Ek bilgi → Yine de çalıştır** ile devam et. Yönetici izni gerekmez; uygulama masaüstüne ve Başlat menüsüne kısayol ekler. Sonraki güncellemelerde bu uyarı çıkmaz.
+
 ## Neden Fixral?
 
-- **Kurulum yok, hesap yok:** Bağlantıyı aç ve kullan. Bilgisayar, tablet ya da telefonda çalışır.
-- **Dosyan senin:** Model hiçbir sunucuya yüklenmez. Tüm geometri işlemleri tarayıcında, WebAssembly ile yapılır.
-- **Baskıya hazır sonuç:** Parçalar tablaya sığacak yönde döndürülür, numaralanır ve yazıcının tablalarına yerleştirilir; birleşecekleri parçanın numarası kesim yüzüne oyulur.
-- **27 yazıcı modeli, 10 dil:** Bambu Lab, Prusa, Creality, Elegoo, Anycubic, Sovol, Qidi, Flashforge ya da özel ölçü; arayüz ve sesli asistan seçtiğin dilde.
+- 🔒 **Dosyan senin.** Model hiçbir sunucuya yüklenmez; tüm geometri bilgisayarında, WebAssembly ile işlenir.
+- 🧩 **Gerçekten birleşen parçalar.** Pim, dübel, mıknatıs, ahşap kavela, kırlangıç kuyruğu, bindirme, ince plakalar için kelebek kama; bağlantılar kesitin şeklini izler.
+- 🏷️ **Karışmayan parçalar.** Her kesim yüzüne `03-07` oyulur: bu yüz P03'e ait, P07 ile birleşir.
+- 🖨️ **Baskıya hazır sonuç.** Parçalar tablaya sığan yönde döndürülür ve yazıcının tablalarına yerleşir; tabla başına STL ya da çok tablalı 3MF.
+- 🌍 **27 yazıcı, 10 dil.** Bambu Lab, Prusa, Creality, Elegoo, Anycubic, Sovol, Qidi, Flashforge ya da özel ölçü; konuşan asistan Dot seçtiğin dilde anlatır.
 
-## Nasıl çalışır?
+## Beş adımda
 
 | Adım | Ne yapar? |
 |---|---|
-| **1 · Hazırla** | STL, 3MF, OBJ, GLB ya da PLY'i sürükle, ya da .fixral projeni aç. Sahnede yalnız model ve ölçüleri: otomatik mesh onarımı, sadeleştirme, ölçekleme (`850mm`, `120%`, `1.5`), döndürme, aynalama, içini boşaltma. |
-| **2 · Ön bölme** | Yazıcı modelini seç; tablası (marka, ölçü, mm cetveli) ve kesim düzlemleri gelir. Birleştirme şablonunu seç; düzlemleri sürükle, kesim ekle ya da sil, düzlemi açılı kesime çevir ya da eğri kesim çiz. |
-| **3 · Böl** | Parçalar ve bağlantılar arka planda saniyeler içinde üretilir; ilerleme ekranın ortasında görünür. |
-| **4 · Parçala** | Parçaları ayrık görünümde incele, birleştir, sil; kesim yüzüne pim, dübel ya da kama ekle, işarete tıklayıp sil. ZIP veya 3MF olarak indir. |
-| **5 · Baskı** | Parçalar tablaya sığan en uygun yönle tablalara yerleşir; bir ya da birkaç parçayı döndür ya da tabana gelecek yüzü seç; basılan dübel ve kamalar da tablalara gelir; gerekiyorsa skirt ve mouse ear'ı tıklayarak ya da seçili parçalara toplu ekle; tabla başına STL ya da çok tablalı 3MF. |
-
-<img src="screenshots/prepare.jpg" alt="Hazırla adımı: tam ekran sahnede model ve eksen renkli ölçü etiketleri" width="100%" />
-
-## v0.13.0'da yeni
-
-- **Doğal ek yerleri:** tek tıkla kol, bacak, baş ve kulp gibi uzantılar boyun ve eklem yerlerinden ayrılır; modelin geri kalanı kesilmez, ek yerine pim ya da dübel gelir. Yazıcıya sığan uzuvlar ayrılınca gövde gereksiz yere kesilmez.
-- **Renkler korunur:** renkli 3MF, GLB, OBJ ve PLY modeller rengini kaybetmeden bölünür; parçalar kendi renkleriyle görünür, renkli 3MF olarak iner.
-
-## v0.12.0'da yeni
-
-- **Proje dosyası ve kurtarma:** çalışmanı `.fixral` olarak kaydet; sayfa kapanırsa açılışta kaldığın yerden devam et. STL'e ek olarak 3MF, OBJ, GLB ve PLY açılır; "Baskıya uygun hale getir" bozuk ya da iç içe kabuklu modelleri düzeltir.
-- **Bölmeden önce gör:** pim, dübel, kırlangıç, kelebek kama ve bindirme kesim düzlemlerinde önizlenir; yoğunluk (Az / Orta / Çok) ve modele göre otomatik ölçü.
-- **Daha çok bağlantı:** altıgen, D profil (tek yönde takılır), geçmeli ve bilyalı eklem; her kesimde pim tarafı seçilir; tolerans deneme parçası.
-- **Eğri modeller için:** açılı kesim artık her bağlantıyla çalışır, iki eksende döner; "Kesimleri modele dik hizala" kıvrık kirişlerde kesimi modele dik koyar; çoklu çizgi kesim.
-- **Montaj:** takılabilir sıra ve adım adım görüntülü, yazdırılabilir montaj kılavuzu; drenaj deliği aracı; kavisli yüzeylere de parça numarası.
-
-## v0.11.0'da yeni
-
-- **Dübel ve kamalar tablada:** basılan dübeller ve kelebek kamalar baskı tablalarına adedince yerleşir ve tablalarla birlikte STL ya da 3MF olarak iner.
-- **Geri al / yinele her adımda:** alt çubuktaki düğmeler ya da `Ctrl`+`Z` / `Ctrl`+`Y`; kesimler, parça silme ve birleştirme, bağlantı düzenleme ve baskı yerleşimi geri alınır.
-- **Kesim ekle, sil, açıyla döndür:** istediğin eksene kesim ekle; düzleme tıklayıp sil ya da bir eksen etrafında istediğin açıyla eğ.
-
-## v0.10.0'da yeni
-
-- **İnce plakalar için kelebek kama:** kesim çizgisinin ortasına iki parçaya eşit giren bir cep açılır; plaka kalınlığında, ayrı basılan kama içine oturup parçaları kilitler. Sivri (kelebek) ya da damla (oval) uçlu: parça kesim yüzü tablada basılsa da cep köprüsüz, desteksiz çıkar. Kamalar otomatik yerleşir; genişlik, uzunluk ve boyun ayarlanır, yerleri tıklayarak eklenip silinir.
-- **Skirt ve mouse ear isteğe bağlı:** hiçbir parçaya kendiliğinden eklenmez. Herhangi bir parçaya tek tıkla tek ear ya da çubuk ekle, ya da seçili parçalara toplu ekle/kaldır.
-- **Daha güvenilir elle bağlantı düzenleme:** pim/dübel işaretine tıklayınca silinir; kenara ya da başka bağlantıya çok yakın yer kırmızı gösterilir ve eklenmez.
-
-## v0.9.0'da yeni
-
-- **Uygulama gibi kullan:** "Uygulamayı yükle" ile ana ekrana ya da masaüstüne ekle; tam ekran açılır, bir kez açtıktan sonra internetsiz de çalışır. iPhone/iPad'de Safari'nin "Paylaş → Ana Ekrana Ekle" adımları gösterilir.
-- **Sakin baskı ekranı:** sahne tıklaması için araç seç: `Seç · Döndür · Ear · Çubuk`. Döndürme yalnız Döndür aracında; ear ve çubuk eklemek ya da döndürmek tablaları yeniden dizmez, parça yerinde kalır. İstersen "Tablalara yeniden yerleştir".
-- **Yeni Dot** ve **yeni örnek model:** ekran yüzlü küçük robot asistan; örnek olarak burgulu bir vazo.
-
-## v0.8.0'da yeni
-
-- **Daha net iş akışı:** beş ana adım alttaki çubukta, her adımın araçları sağ kenardaki rayda. İlk kullanımda Dot bakılacak araçları sayar, henüz açmadıkların yeşil noktayla işaretlenir.
-- **Çoklu seçimle döndürme:** baskı adımında `Ctrl`+tık ya da "Tümünü seç" ile birkaç parçayı birlikte döndür.
-- **Mouse ear'ı fareyle yerleştir:** parçayı seç, kenarına ya da yanındaki tablaya tıkla; 1, 4 ya da hiç, sayı senin seçimin. Skirt çubukları da tablaya tıklayarak eklenir.
-
-## v0.7.0'da yeni
-
-- **Tam ekran çalışma alanı:** sabit panel yok; altta adımın araçları, ayarlar sağ kenardaki panelde, model ortada açık. Sol altta kamerayla dönen görünüm küpü.
-- **Yazıcı tablası ve 27 güncel yazıcı:** seçtiğin yazıcının tablası sahnede marka/model adı, ölçüsü ve mm cetveliyle çizilir; baskı tablaları da aynı şekli alır.
-- **Seçili parça aracı:** baskı adımında parçaya tıkla; Z'de ±15°/±90° döndür, X/Y'de yatır ya da sahnedeki halkayla döndür; tabana gelecek düz yüzü seçerek tablaya oturt.
-- **Tablaya kesin sığan yerleşim** ve **tabla başına tek model olan 3MF:** dilimleyicide açılınca her model kendi tablasında.
-- **İnce parçalarda da numara:** etiket eğik yazılır, kısaltılır ya da parçanın düz dış yüzüne oyulur.
-- **Sade skirt ve mouse ear ayarı:** tüm parçalar için `Otomatik | Hepsine | Hiçbirine`, parça başına ayrı seçim.
-- **Yeni logo ve yükleniyor göstergesi:** parçalara ayrılıp birleşen küp.
+| **1 · Hazırla** | STL, 3MF, OBJ, GLB, PLY ya da `.fixral` projeni aç. Otomatik mesh onarımı, sadeleştirme, ölçekleme (`850mm`, `120%`, `1.5`), döndürme, aynalama, içini boşaltma. |
+| **2 · Ön bölme** | Yazıcını seç; kesim düzlemleri hacme göre yerleşir. Birleştirme şablonunu seç, düzlemleri sürükle, kesim ekle, açıyla döndür ya da eğri kesim çiz. "Doğal ek yerleri" kol, bacak, baş gibi uzantıları eklem yerlerinden ayırır. |
+| **3 · Böl** | Parçalar ve bağlantılar arka planda saniyeler içinde üretilir. |
+| **4 · Parçala** | Ayrık görünümde incele; parçaları birleştir, sil, kesim yüzüne tıklayarak pim ya da dübel ekle. Montaj sırası, montaj kılavuzu ve tahmini teklif. |
+| **5 · Baskı** | Parçalar tablalara yerleşir; döndür, tabana gelecek yüzü seç, gerekiyorsa skirt ve mouse ear ekle. Tabla başına STL ya da çok tablalı 3MF indir. |
 
 <img src="screenshots/templates.jpg" alt="Ön bölme: yazıcı tablası, kesim düzlemleri ve sağdaki birleştirme şablonu paneli" width="100%" />
 
-## Öne çıkan özellikler
+## Yenilikler
 
-### Tablalara yerleşen, döndürülebilen parçalar
-Her parça için tabla teması büyük, sarkması az ve tablaya kesin sığan yön seçilir; parçalar seçili yazıcının tablalarına dağıtılır. Bir parçaya tıklayıp düğmelerle ya da sahnedeki halkayla döndür, istersen tabana gelecek yüzü seç.
+**v0.14.0 · Windows masaüstü sürümü.** Fixral artık kurulum dosyasıyla Windows'a uygulama olarak kurulabiliyor. Yeni sürümler arka planda kendiliğinden indirilir; üst çubuktaki **Güncellemeyi kur** düğmesiyle hemen ya da uygulama kapanırken kurulur.
 
-<img src="screenshots/print.jpg" alt="Baskı adımı: seçili parçada döndürme halkası ve Seçili parça paneli" width="100%" />
+**v0.13 · Doğal ek yerleri ve renkler.** Tek tıkla kol, bacak, baş ve kulp gibi uzantılar boyun ve eklem yerlerinden ayrılır; modelin geri kalanı kesilmez. Renkli 3MF, GLB, OBJ ve PLY modeller rengini kaybetmeden bölünür ve renkli 3MF olarak iner.
 
-### Yüzeyi izleyen skirt çubukları ve mouse ear
-ABS, ASA, naylon ve PC gibi çeken filamentlerde taban ve köşe kalkmasına karşı: tabladaki taban plakasının üstünde duran üçgen prizma modele hafifçe değer ve eğimli yüzeylerde yüzeyin açısına göre eğilir; baskıdan sonra yana bükerek kırılır. 8 filament profili (PLA, PETG, ABS, ASA, TPU, PA, PC, PLA-CF).
+**v0.12 · Proje dosyası ve kurtarma.** Çalışmanı `.fixral` olarak kaydet; sayfa kapanırsa kaldığın yerden devam et. Bölmeden önce bağlantı önizlemesi, altıgen, D profil, geçmeli ve bilyalı pimler, tolerans deneme parçası, adım adım montaj kılavuzu.
 
-<img src="screenshots/skirt.jpg" alt="ABS ile tablalara yerleşmiş parçalar, skirt çubukları ve Skirt ve mouse ear paneli" width="100%" />
+Tüm sürüm notları uygulamada: sürüm rozetine tıkla → **Neler yeni**.
 
-### Kesitin şeklini izleyen bağlantılar
-Pim, dübel, mıknatıs ve kırlangıç kuyruğu noktaları kesit boyunca, kalın bölgelere yakın ve aralıklı dağılır. Kesim yüzüne tıklayarak elle pim ya da dübel ekle; her noktanın çapı, boyu ve tipi ayrı ayarlanır.
+## Öne çıkanlar
 
-<img src="screenshots/jointedit.jpg" alt="Elle pim ve dübel düzenleme: kesim yüzlerinde işaretler ve ölçü paneli" width="100%" />
+<table>
+<tr>
+<td width="50%"><img src="screenshots/jointedit.jpg" alt="Elle pim ve dübel düzenleme: kesim yüzlerinde işaretler ve ölçü paneli" /></td>
+<td width="50%"><img src="screenshots/explode.jpg" alt="Ayrık görünümde pim ve dübellerle bölünmüş model ve parça listesi" /></td>
+</tr>
+<tr>
+<td><b>Kesitin şeklini izleyen bağlantılar.</b> Pim, dübel ve mıknatıslar kesit boyunca kalın bölgelere dağılır. Kesim yüzüne tıklayıp elle ekle; her noktanın çapı, boyu ve tipi ayrı ayarlanır.</td>
+<td><b>Ayrık görünüm ve parça araçları.</b> Birleştir, sil, gizle, izole et, geri al. Tahmini teklif (filament, süre, malzeme, kâr) ve yazdırılabilir montaj kılavuzu.</td>
+</tr>
+<tr>
+<td><img src="screenshots/skirt.jpg" alt="ABS ile tablalara yerleşmiş parçalar, skirt çubukları ve Skirt ve mouse ear paneli" /></td>
+<td><img src="screenshots/labels.jpg" alt="Ayrık görünümde parça numaraları" /></td>
+</tr>
+<tr>
+<td><b>Skirt çubukları ve mouse ear.</b> ABS, ASA, naylon gibi çeken filamentlerde köşe kalkmasına karşı; tıklayarak tek tek ya da seçili parçalara toplu ekle. 8 filament profili.</td>
+<td><b>Numaralı parçalar.</b> Etiket kesim yüzüne oyulur; ince parçalarda eğik yazılır, kısaltılır ya da düz dış yüze taşınır.</td>
+</tr>
+<tr>
+<td><img src="screenshots/view-menu.jpg" alt="Görünüm menüsü: göster/gizle, ışık, gölge ve çalışma alanı ayarları" /></td>
+<td><img src="screenshots/lang-ar.jpg" alt="Sağdan sola Arapça arayüz" /></td>
+</tr>
+<tr>
+<td><b>Görünüm menüsü.</b> Izgara, tabla cetveli, ölçüler, ışık, gölge, arka plan ve çözünürlük; tercihler saklanır.</td>
+<td><b>10 dil ve Dot.</b> Türkçe, English, Deutsch, 中文, 日本語, 한국어, العربية (sağdan sola), Français, Italiano, Español; sesli anlatım ve rehberli tur.</td>
+</tr>
+</table>
 
-### Numaralı parçalar
-Kesim yüzlerine oyulan `03-07` etiketi: bu yüz P03'e ait ve P07 ile birleşir. İnce parçalarda numara eğik yazılır ya da düz bir dış yüze oyulur.
-
-<img src="screenshots/labels.jpg" alt="Ayrık görünümde parça numaraları" width="100%" />
-
-### Ayrık görünüm ve parça araçları
-Parçaları ayrık görünümde incele; birleştir, sil, gizle, izole et, geri al. Tahmini teklif (filament, süre, malzeme, makine, montaj, hazırlık, kâr) ve yazdırılabilir montaj kılavuzu.
-
-<img src="screenshots/explode.jpg" alt="Ayrık görünümde pim ve dübellerle bölünmüş model ve parça listesi" width="100%" />
-
-### Görünüm menüsü
-Adım açıklamaları, asistan, zemin ızgarası, tabla cetveli, ölçüler, yazıcı tablası; ışık, gölge, arka plan ve çözünürlük. Tercihler tarayıcında saklanır.
-
-<img src="screenshots/view-menu.jpg" alt="Görünüm menüsü: göster/gizle, ışık, gölge ve çalışma alanı ayarları" width="100%" />
-
-### Konuşan asistan Dot ve 10 dil
-Dot seçtiğin dilde sesli anlatım yapar, rehberli tur verir ve "bu adımda ne yapmalıyım?" sorusunu yanıtlar. Arayüz Türkçe, English, Deutsch, 中文, 日本語, 한국어, العربية (sağdan sola), Français, Italiano ve Español dillerinde.
-
-<img src="screenshots/lang-ar.jpg" alt="Sağdan sola Arapça arayüz" width="100%" />
-
-### Diğerleri
-Eğri kesim · akıllı seç ve ayır (kulak, burun gibi detaylar) · ince şerit bırakmayan kesim optimizasyonu · içini boşaltma ve kesimlere dolu bölme · kesit ve tel kafes görünümü · STL, 3MF ve ZIP dışa aktarma.
+**Ayrıca:** eğri ve çoklu çizgi kesim · açılı kesim · kesimleri modele dik hizalama · akıllı seç ve ayır · içini boşaltma ve dolu bölmeler · drenaj deliği · basılan dübel ve kamalar tablada · geri al / yinele her adımda · kesit ve tel kafes görünümü.
 
 ## Desteklenen yazıcılar
 
-Bambu Lab X1 Carbon / X1E, P1S / P1P, P2S, A1, A1 mini, H2D, H2S · Prusa MK4S / MK4, Core One, MINI+, XL · Creality K1 / K1C, K1 Max, K2 Plus, Hi, Ender-3 V3 / V3 SE / V3 KE · Elegoo Centauri Carbon, Neptune 4 Pro, Neptune 4 Max · Anycubic Kobra 3, Kobra S1 · Sovol SV06, SV08 · Qidi Q1 Pro, Plus4 · Flashforge Adventurer 5M / 5M Pro · özel ölçü.
+| Marka | Modeller |
+|---|---|
+| Bambu Lab | X1 Carbon / X1E, P1S / P1P, P2S, A1, A1 mini, H2D, H2S |
+| Prusa | MK4S / MK4, Core One, MINI+, XL |
+| Creality | K1 / K1C, K1 Max, K2 Plus, Hi, Ender-3 V3 / V3 SE / V3 KE |
+| Elegoo | Centauri Carbon, Neptune 4 Pro, Neptune 4 Max |
+| Anycubic | Kobra 3, Kobra S1 |
+| Sovol | SV06, SV08 |
+| Qidi | Q1 Pro, Plus4 |
+| Flashforge | Adventurer 5M / 5M Pro |
+| Özel | İstediğin ölçü; kendi yazıcın olarak kaydedilir |
 
-## Dil bağlantıları
+## Diller
 
 [Türkçe](https://fixral3d.github.io/fixral-3d-splitter/?lang=tr) ·
 [English](https://fixral3d.github.io/fixral-3d-splitter/?lang=en) ·
@@ -147,36 +128,34 @@ Bambu Lab X1 Carbon / X1E, P1S / P1P, P2S, A1, A1 mini, H2D, H2S · Prusa MK4S /
 [Italiano](https://fixral3d.github.io/fixral-3d-splitter/?lang=it) ·
 [Español](https://fixral3d.github.io/fixral-3d-splitter/?lang=es)
 
-## Anahtar kelimeler / Keywords
-
-3D model bölme · STL bölme · 3D baskı için model bölme · büyük model bölme · pim · dübel · mıknatıs · kırlangıç kuyruğu · bindirme · baskı hacmi · tabla yerleşimi · mouse ear · skirt · ücretsiz · tarayıcıda
-
-3D model splitter · STL splitter · split STL online · split 3D model for printing · oversized 3D model · pin joint · dowel joint · magnet joint · dovetail joint · lap joint · build volume · plate layout · multi-plate 3MF · anti-warping skirt · mouse ears · mesh repair · free · browser-based
-
 ---
 
 ## English
 
-**Fixral 3D Splitter / Slicer** splits oversized STL models to fit your 3D printer's build volume, entirely in your browser. No install, no account, and your file never leaves your computer: all geometry runs locally with WebAssembly.
+**Fixral 3D Splitter / Slicer** splits oversized 3D models to fit your printer's build volume. Your file never leaves your computer: all geometry runs locally in WebAssembly.
 
-- **Full-screen workspace:** the five main steps in a bottom bar, each step's tools in a right-side rail with a settings panel, a first-run guide, view cube, a centred progress card for long operations
-- **27 printer models** (Bambu Lab, Prusa, Creality, Elegoo, Anycubic, Sovol, Qidi, Flashforge) or a custom size, with the printer's bed drawn in the scene
-- **Joints:** pyramid or cylinder pins, separate dowels, neodymium magnet pockets, wooden dowels, dovetails, lap joints and butterfly keys for thin plates (a separately printed key as thick as the plate, with ends that print without supports), placed along each cross-section
-- **Model prep:** automatic mesh repair, simplification, scaling, rotation, mirroring, hollowing, smart select & extract
-- **Numbered parts** with engraved `03-07` mating labels, also on thin parts
-- **Installable app:** add to your home screen or desktop, full screen, works offline after the first visit
-- **Print step:** orientation that always fits the bed, a click tool (Select, Rotate, Ear, Rod) so nothing moves unless you ask, rotate one or several parts (buttons or a drag ring), pick the bed face, optional skirt rods and mouse ears added one at a time by clicking or in bulk to the selected parts, 8 filament profiles
-- **Export:** STL (ZIP), colored 3MF, per-plate STL and a multi-plate 3MF with one model per plate
-- **Built-in quote** and a printable assembly guide
-- **Dot**, a talking assistant with a guided tour, in 10 languages including right-to-left Arabic
+**Two ways to use it**
+- 🌐 **In the browser:** [open the live app](https://fixral3d.github.io/fixral-3d-splitter/?lang=en). Works on desktop, tablet and phone, and offline after the first visit.
+- 🖥️ **Windows app:** [download the installer](https://github.com/fixral3d/fixral-3d-splitter/releases/latest). New versions download in the background and install with one click or when you close the app. The installer is not code-signed yet, so Windows may show *"Windows protected your PC"*: choose **More info → Run anyway**. No admin rights needed.
 
-**[▶ Open the live app](https://fixral3d.github.io/fixral-3d-splitter/?lang=en)**
+**What it does**
+- **Joints:** pyramid, cylinder, hexagon, D-profile, snap-fit and ball-joint pins, printed dowels, magnet pockets, wooden dowels, dovetails, lap joints, and butterfly keys for thin plates, placed along each cross-section
+- **Cuts:** automatic grid for your build volume, drag, add, delete and angle cuts, curved and polyline cuts, and *natural seams* that separate limbs at their joints
+- **Model prep:** mesh repair, simplification, scaling, rotation, mirroring, hollowing, smart select and extract; imports STL, 3MF, OBJ, GLB/GLTF, PLY and `.fixral` projects
+- **Numbered parts** with engraved `03-07` mating labels; colours preserved through the split
+- **Print step:** bed-fitting orientation, plate layout for 27 printer models, optional skirt rods and mouse ears, 8 filament profiles
+- **Export:** STL (ZIP), coloured 3MF, per-plate STL and multi-plate 3MF; built-in cost estimate and printable assembly guide
+- **10 languages** including right-to-left Arabic, and **Dot**, a talking assistant with a guided tour
 
 ---
 
-Bu depo yalnızca canlı sitenin derlenmiş dosyalarını barındırır; kaynak kodu paylaşılmamaktadır.
-This repository only hosts the built files of the live site; the source code is not public.
+<div align="center">
 
-**Fixral 3D Splitter / Slicer v0.7.0** · [Canlı uygulama / Live app](https://fixral3d.github.io/fixral-3d-splitter/) · [fixral.com](https://fixral.com) · [fixral3d@gmail.com](mailto:fixral3d@gmail.com)
+Bu depo yalnızca canlı sitenin derlenmiş dosyalarını ve Windows kurulum dosyalarını barındırır; kaynak kodu paylaşılmamaktadır.<br />
+This repository only hosts the built site and the Windows installers; the source code is not public.
+
+**Fixral 3D Splitter / Slicer** · [Canlı uygulama / Live app](https://fixral3d.github.io/fixral-3d-splitter/) · [İndir / Download](https://github.com/fixral3d/fixral-3d-splitter/releases/latest) · [fixral.com](https://fixral.com) · [fixral3d@gmail.com](mailto:fixral3d@gmail.com)
 
 © 2026 Fixral. Tüm hakları saklıdır. All rights reserved.
+
+</div>
