@@ -52,11 +52,11 @@ numaralı parçaları tablalara yerleştirip STL ya da 3MF olarak indir. Ücrets
 
 | Adım | Ne yapar? |
 |---|---|
-| **1 · Hazırla** | STL, 3MF, OBJ, GLB, PLY ya da `.fixral` projeni aç. Otomatik mesh onarımı, sadeleştirme, ölçekleme (`850mm`, `120%`, `1.5`), döndürme, aynalama, içini boşaltma. |
+| **1 · Hazırla** | STL, 3MF, OBJ, GLB, PLY ya da `.fixral` projeni aç. Otomatik mesh onarımı, oto hizalama, büyük taramalarda otomatik sadeleştirme, ölçekleme (`850mm`, `120%`, `1.5`), döndürme, aynalama, içini boşaltma. |
 | **2 · Ön bölme** | Yazıcını seç; kesim düzlemleri hacme göre yerleşir. Birleştirme şablonunu seç, düzlemleri sürükle, kesim ekle, açıyla döndür ya da eğri kesim çiz. "Doğal ek yerleri" kol, bacak, baş gibi uzantıları eklem yerlerinden ayırır. |
 | **3 · Böl** | Parçalar ve bağlantılar arka planda saniyeler içinde üretilir. |
 | **4 · Parçala** | Ayrık görünümde incele; parçaları birleştir, sil, kesim yüzüne tıklayarak pim ya da dübel ekle. Montaj sırası, montaj kılavuzu ve tahmini teklif. |
-| **5 · Baskı** | Parçalar tablalara yerleşir; döndür, tabana gelecek yüzü seç, gerekiyorsa skirt ve mouse ear ekle. Tabla başına STL ya da çok tablalı 3MF indir. |
+| **5 · Baskı** | Parçalar tablalara yerleşir; sürükleyerek elle taşı, döndür, tabana gelecek yüzü seç, gerekiyorsa skirt ve mouse ear ekle. Tabla başına STL ya da çok tablalı 3MF indir. |
 
 <img src="screenshots/templates.jpg" alt="Ön bölme: yazıcı tablası, kesim düzlemleri ve sağdaki birleştirme şablonu paneli" width="100%" />
 
