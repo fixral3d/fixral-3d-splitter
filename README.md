@@ -62,6 +62,8 @@ numaralı parçaları tablalara yerleştirip STL ya da 3MF olarak indir. Ücrets
 
 ## Yenilikler
 
+**v0.17.0 · Bölmeden önce daha çok güvence.** Bağlantı sığmayan kesim yüzleri önizlemede kırmızı görünür. Kesimler istenirse modelin dar boyun ve bel kısımlarına yerleşir. Tıkladığın yüzeye paralel ya da iki noktadan geçen hizalı kesim kurabilirsin. Geçme toleransı malzemeye göre önerilir, sık kullandığın bağlantı ayarlarını adıyla kaydedebilirsin. Windows uygulamasında tablalar tek tıkla dilimleyicide açılır.
+
 **v0.16.0 · Daha kolay ve tutarlı kullanım.** Ön bölmede kaç parça çıkacağı ve tablaya sığıp sığmadığı tek bakışta görünür; kesim konumu mm olarak yazılır ya da ok tuşlarıyla itilir. Birleştirme panelinde önce tür, sonra o türün hazır ölçüleri gelir; geçme toleransı (Sıkı · Normal · Gevşek) ve bağlantı yoğunluğu (− / +) tek tıkla ayarlanır. Kalın kesitlerde kelebek kama artık yüzeye gömülür, kırlangıç önizlemesi gerçek rayı gösterir. 17 yeni yazıcıyla toplam 44 model.
 
 **v0.14.0 · Windows masaüstü sürümü.** Fixral artık kurulum dosyasıyla Windows'a uygulama olarak kurulabiliyor. Yeni sürümler arka planda kendiliğinden indirilir; üst çubuktaki **Güncellemeyi kur** düğmesiyle hemen ya da uygulama kapanırken kurulur.
