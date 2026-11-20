@@ -18,7 +18,7 @@ numaralı parçaları tablalara yerleştirip STL ya da 3MF olarak indir. Ücrets
 
 ![Sürüm](https://img.shields.io/github/v/release/fixral3d/fixral-3d-splitter?label=s%C3%BCr%C3%BCm&color=34e3a8)
 ![Ücretsiz](https://img.shields.io/badge/fiyat-%C3%BCcretsiz-34e3a8)
-![Yazıcılar](https://img.shields.io/badge/yaz%C4%B1c%C4%B1-27%20model-ffb547)
+![Yazıcılar](https://img.shields.io/badge/yaz%C4%B1c%C4%B1-44%20model-ffb547)
 ![Diller](https://img.shields.io/badge/diller-10-3cc7d6)
 ![Gizlilik](https://img.shields.io/badge/dosyan-y%C3%BCklenmez-654ff0)
 
@@ -46,21 +46,23 @@ numaralı parçaları tablalara yerleştirip STL ya da 3MF olarak indir. Ücrets
 - 🧩 **Gerçekten birleşen parçalar.** Pim, dübel, mıknatıs, ahşap kavela, kırlangıç kuyruğu, bindirme, ince plakalar için kelebek kama; bağlantılar kesitin şeklini izler.
 - 🏷️ **Karışmayan parçalar.** Her kesim yüzüne `03-07` oyulur: bu yüz P03'e ait, P07 ile birleşir.
 - 🖨️ **Baskıya hazır sonuç.** Parçalar tablaya sığan yönde döndürülür ve yazıcının tablalarına yerleşir; tabla başına STL ya da çok tablalı 3MF.
-- 🌍 **27 yazıcı, 10 dil.** Bambu Lab, Prusa, Creality, Elegoo, Anycubic, Sovol, Qidi, Flashforge ya da özel ölçü; konuşan asistan Dot seçtiğin dilde anlatır.
+- 🌍 **44 yazıcı, 10 dil.** Bambu Lab, Prusa, Creality, Elegoo, Anycubic, Sovol, Qidi, Flashforge, Voron, Artillery, Ultimaker ya da özel ölçü; konuşan asistan Dot seçtiğin dilde anlatır.
 
 ## Beş adımda
 
 | Adım | Ne yapar? |
 |---|---|
 | **1 · Hazırla** | STL, 3MF, OBJ, GLB, PLY ya da `.fixral` projeni aç. Otomatik mesh onarımı, oto hizalama, büyük taramalarda otomatik sadeleştirme, ölçekleme (`850mm`, `120%`, `1.5`), döndürme, aynalama, içini boşaltma. |
-| **2 · Ön bölme** | Yazıcını seç; kesim düzlemleri hacme göre yerleşir. Birleştirme şablonunu seç, düzlemleri sürükle, kesim ekle, açıyla döndür ya da eğri kesim çiz. "Doğal ek yerleri" kol, bacak, baş gibi uzantıları eklem yerlerinden ayırır. |
+| **2 · Ön bölme** | Yazıcını seç; kesim düzlemleri hacme göre yerleşir ve kaç parça çıkacağı, hepsinin tablaya sığıp sığmadığı görünür. Bağlantı türünü seç, düzlemleri sürükle ya da konumunu mm olarak yaz, kesim ekle, açıyla döndür ya da eğri kesim çiz. "Doğal ek yerleri" kol, bacak, baş gibi uzantıları eklem yerlerinden ayırır. |
 | **3 · Böl** | Parçalar ve bağlantılar arka planda saniyeler içinde üretilir. |
-| **4 · Parçala** | Ayrık görünümde incele; parçaları birleştir, sil, kesim yüzüne tıklayarak pim ya da dübel ekle. Montaj sırası, montaj kılavuzu ve tahmini teklif. |
+| **4 · İncele** | Ayrık görünümde incele; parçaları birleştir, sil, kesim yüzüne tıklayarak pim ya da dübel ekle. Montaj sırası, montaj kılavuzu ve tahmini teklif. |
 | **5 · Baskı** | Parçalar tablalara yerleşir; sürükleyerek elle taşı, döndür, tabana gelecek yüzü seç, gerekiyorsa skirt ve mouse ear ekle. Tabla başına STL ya da çok tablalı 3MF indir. |
 
 <img src="screenshots/templates.jpg" alt="Ön bölme: yazıcı tablası, kesim düzlemleri ve sağdaki birleştirme şablonu paneli" width="100%" />
 
 ## Yenilikler
+
+**v0.16.0 · Daha kolay ve tutarlı kullanım.** Ön bölmede kaç parça çıkacağı ve tablaya sığıp sığmadığı tek bakışta görünür; kesim konumu mm olarak yazılır ya da ok tuşlarıyla itilir. Birleştirme panelinde önce tür, sonra o türün hazır ölçüleri gelir; geçme toleransı (Sıkı · Normal · Gevşek) ve bağlantı yoğunluğu (− / +) tek tıkla ayarlanır. Kalın kesitlerde kelebek kama artık yüzeye gömülür, kırlangıç önizlemesi gerçek rayı gösterir. 17 yeni yazıcıyla toplam 44 model.
 
 **v0.14.0 · Windows masaüstü sürümü.** Fixral artık kurulum dosyasıyla Windows'a uygulama olarak kurulabiliyor. Yeni sürümler arka planda kendiliğinden indirilir; üst çubuktaki **Güncellemeyi kur** düğmesiyle hemen ya da uygulama kapanırken kurulur.
 
@@ -143,7 +145,7 @@ Tüm sürüm notları uygulamada: sürüm rozetine tıkla → **Neler yeni**.
 - **Cuts:** automatic grid for your build volume, drag, add, delete and angle cuts, curved and polyline cuts, and *natural seams* that separate limbs at their joints
 - **Model prep:** mesh repair, simplification, scaling, rotation, mirroring, hollowing, smart select and extract; imports STL, 3MF, OBJ, GLB/GLTF, PLY and `.fixral` projects
 - **Numbered parts** with engraved `03-07` mating labels; colours preserved through the split
-- **Print step:** bed-fitting orientation, plate layout for 27 printer models, optional skirt rods and mouse ears, 8 filament profiles
+- **Print step:** bed-fitting orientation, plate layout for 44 printer models, optional skirt rods and mouse ears, 8 filament profiles
 - **Export:** STL (ZIP), coloured 3MF, per-plate STL and multi-plate 3MF; built-in cost estimate and printable assembly guide
 - **10 languages** including right-to-left Arabic, and **Dot**, a talking assistant with a guided tour
 
